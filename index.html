@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>iMDone by piascikj</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>iMDone</h1>
+        <h2>Create tasks in any local file using markdown syntax and keep them organized with kanban</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/piascikj/imdone/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/piascikj/imdone/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/piascikj/imdone" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>iMDone</h1>
+
+<h2>Create tasks in any file using markdown syntax and organize them with a local kanban board.</h2>
+
+<h2>Your tasks are in your files, so you can share your board on <a href="http://www.github.com">github</a>, <a href="http://www.dropbox.com">dropbox</a>, or any other cloud storage provider.</h2>
+
+<h3>Install</h3>
+
+<p><code>npm install -g imdone</code></p>
+
+<h3>And run!</h3>
+
+<p>navigate to your local project folder and run:<br><code>imdone</code></p>
+
+<h4>Put a task at the top of a list called "to-do"</h4>
+
+<p><code>[this is a task](#todo:20)</code></p>
+
+<h4>In javascript code</h4>
+
+<p><code>//[this is a task in javascript code](#done:60)</code></p>
+
+<h4>Put a task on the bottom of a list called "doing"</h4>
+
+<p><code>[this is a task in doing](#doing:40)</code> </p>
+
+<h4>Tasks are sorted by the number after the <code>:</code>
+</h4>
+
+<h4>imdone will create a folder named imdone that will contain your custom configuration and a file to keep your lists in order</h4>
+
+<ul>
+<li>you should keep imdone in source control</li>
+</ul><h3>Configuration</h3>
+
+<p>After running imdone for the first time, modify imdone/imdone.js in your project directory.  The default config looks like this.  Your imdone.js will extend this.</p>
+
+<pre><code>module.exports = {
+    exclude:/^(node_modules|imdone|target)\/|^\.(git|svn)\/|\~$|\.(jpg|png|gif|swp)$/,
+    port:8080,
+    //github : {url : "http://www.github.com/piascikj/imdone"}, //Use this if you want links to point at github
+    marked : {
+        gfm: true,
+        pedantic: false,
+        sanitize: true
+    }
+};
+</code></pre>
+
+<h3>Implemented in version 0.1.2</h3>
+
+<ul>
+<li>
+<a>Page needs to refresh when tasks have been modified, deleted or added.  Use </a><a href="https://npmjs.org/package/ws">https://npmjs.org/package/ws</a>
+</li>
+</ul>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
