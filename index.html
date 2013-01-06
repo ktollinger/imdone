@@ -3,32 +3,32 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
     <title>iMDone by piascikj</title>
   </head>
 
   <body>
+
     <header>
-      <div class="inner">
+      <div class="container">
         <h1>iMDone</h1>
         <h2>Create tasks in any local file using markdown syntax and keep them organized with kanban</h2>
-        <a href="https://github.com/piascikj/imdone" class="button"><small>View project on</small>GitHub</a>
+
+        <section id="downloads">
+          <a href="https://github.com/piascikj/imdone/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/piascikj/imdone/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/piascikj/imdone" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
       </div>
     </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>iMDone</h1>
+    <div class="container">
+      <section id="main_content">
+        <h1>iMDone</h1>
 
 <h2>Create tasks in any file using markdown syntax and organize them with a local kanban board.</h2>
 
@@ -55,17 +55,24 @@
 
 <p>navigate to your local project folder and run:<br><code>imdone</code></p>
 
-<h4>Put a task at the top of a list called "to-do"</h4>
+<ul>
+<li>You can start it in multiple directories and switch between projects in the UI</li>
+</ul><h3>See it in action!</h3>
+
+<ul>
+<li>fork this repository and run imdone in your local copy.  I use the imdone for developing imdone
+####Tasks are just markdown links</li>
+</ul><h4>Put a task at the top of a list called "todo"</h4>
 
 <p><code>[this is a task](#todo:0)</code></p>
 
 <h4>In javascript code</h4>
 
-<p><code>//[this is a task in javascript code](#done:100)</code></p>
+<p><code>//[this is a task in javascript code](#todo:0)</code></p>
 
-<h4>Put a task on the bottom of a list called "doing"</h4>
+<h4>Put a task on the bottom of a list called "doing" (giving it a sort value of 1000 will put it at the bottom unless you have tons of tasks in the list)</h4>
 
-<p><code>[this is a task in doing](#doing:40)</code> </p>
+<p><code>[this is a task in doing](#doing:1000)</code> </p>
 
 <h4>Tasks are sorted by the number after the <code>:</code>
 </h4>
@@ -74,6 +81,12 @@
 
 <ul>
 <li>you should keep imdone in source control</li>
+</ul><h4>Filter by file name</h4>
+
+<ul>
+<li>You can filter by the file name the task are in.<br>
+</li>
+<li>As you type in the "filter by file name" field, tasks are filtered</li>
 </ul><h3>Configuration</h3>
 
 <p>After running imdone for the first time, modify imdone/imdone.js in your project directory.  The default config looks like this.  Your imdone.js will extend this.</p>
@@ -81,7 +94,6 @@
 <pre><code>module.exports = {
     include:/^.*$/,
     exclude:/^(node_modules|imdone|target)\/|^\.(git|svn)\/|\~$|\.(jpg|png|gif|swp)$/,
-    port:8080,
     //github : {url : "http://www.github.com/piascikj/imdone"}, //Use this if you want links to point at github
     marked : {
         gfm: true,
@@ -93,36 +105,53 @@
 
 <h3>Release notes</h3>
 
-<h4>0.1.2</h4>
+<h4>0.1.11</h4>
 
 <ul>
 <li>
-<a>Page needs to refresh when tasks have been modified, deleted or added.  Use </a><a href="https://npmjs.org/package/ws">https://npmjs.org/package/ws</a>
+<p>Now able to hide a list from board using hidden</p>
+
+<h5>imdone/data.js is now formatted like this</h5>
+
+<p>{
+    lists:[],
+    hidden:[]
+}</p>
 </li>
+</ul><h4>0.1.10</h4>
+
+<ul>
+<li>Source view if github is not set</li>
+<li>Default lists are respected if added to imdone/data.js</li>
+<li>Lists won't be removed unless specifically removed in ui or imdone/data.js</li>
+</ul><h4>0.1.8</h4>
+
+<ul>
+<li>Sort is fixed for multiple projects</li>
+</ul><h4>0.1.7</h4>
+
+<ul>
+<li>Start in multiple project directories</li>
+</ul><h4>0.1.6</h4>
+
+<ul>
+<li>Added filter by file name</li>
+</ul><h4>0.1.4</h4>
+
+<ul>
+<li>Use line number when loading page in github</li>
 </ul><h4>0.1.3</h4>
 
 <ul>
-<li>include added to config</li>
+<li>include added to config for files to include.  Order is include &gt; Exclude</li>
+</ul><h4>0.1.2</h4>
+
+<ul>
+<li>Using websockets to refresh board on changes</li>
 </ul>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/piascikj/imdone/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/piascikj/imdone/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/piascikj/imdone"></a> is maintained by <a href="https://github.com/piascikj">piascikj</a>.</p>
-
-          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+      </section>
     </div>
 
-  
+    
   </body>
 </html>
