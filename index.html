@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <title>iMDone - TODO, doing, done!</title>
+    <title>iMDone by piascikj</title>
     <link rel="stylesheet" href="stylesheets/styles.css">
     <link rel="stylesheet" href="stylesheets/pygment_trac.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
@@ -18,7 +18,7 @@
 
       <header>
         <h1>iMDone</h1>
-        <p>TODO, doing, done!</p>
+        <p>TODO, doing done!</p>
       </header>
 
       <div id="banner">
@@ -41,7 +41,19 @@
       <section>
         <h1>iMDone</h1>
 
-<h3>Create tasks in any file using markdown syntax and organize them with a local kanban board.  Your tasks are in your files, so you can share your board on <a href="http://www.github.com">github</a>, <a href="http://www.dropbox.com">dropbox</a>, or any other cloud storage provider.</h3>
+<h2>Keep your tasks in your work!!!</h2>
+
+<p>Create tasks in any file using markdown syntax and organize them with a local kanban board.  Your tasks are in your files, so you can share your board on <a href="http://www.github.com">github</a>, <a href="http://www.dropbox.com">dropbox</a>, or any other cloud storage provider.</p>
+
+<h2>Tasks are just markdown links!!!</h2>
+
+<p><strong>Put a task at the top of a list called "todo"</strong><br><code>[this is a task](#todo:0)</code>  </p>
+
+<p><strong>In javascript code</strong><br><code>//[this is a task in javascript code](#todo:0)</code>  </p>
+
+<p><strong>Put a task on the bottom of a list called "doing" (giving it a sort value of 1000 will put it at the bottom unless you have tons of tasks in the list)</strong><br><code>[this is a task in doing](#doing:1000)</code>  </p>
+
+<p><strong>Tasks are sorted by the number after the <code>:</code></strong>  </p>
 
 <h2>Prerequisites </h2>
 
@@ -59,10 +71,28 @@
 <h2>Run</h2>
 
 <ul>
-<li><p>open a terminal window and navigate to your local project folder and run:<br><code>imdone</code></p></li>
+<li><p>open a terminal window and navigate to your local project folder and run:<br><code>imdone -o</code></p></li>
 <li><p>You can start it in multiple directories and switch between projects in the UI</p></li>
-<li><p>open another terminal window and run:<br><code>imdone open</code> or go to <a href="http://localhost:8080">http://localhost:8080</a></p></li>
-<li><p>stop imdone with ctrl+c in the console you started it initialy, or by running:<br><code>imdone stop</code></p></li>
+<li>
+<p>Here's the help output</p>
+
+<p>Usage: imdone [options]</p>
+
+<p>Options:</p>
+
+<pre><code>-h, --help     output usage information
+-V, --version  output the version number
+-o, --open     Open imdone in the default browser
+-s, --stop     Stop imdone server
+</code></pre>
+
+<p>Example:</p>
+
+<pre><code>Open imdone  in a browser with the current working directory as the project root
+
+$ imdone -o
+</code></pre>
+</li>
 </ul><h2>How you can help</h2>
 
 <p>If you like iMDone and want to help me make it better, you can make a contribution at pledgie.  Every donation is very much appreciated.<br><a href="http://www.pledgie.com/campaigns/19536"><img alt="Click here to lend your support to: iMDone - TODO, doing, done! and make a donation at www.pledgie.com !" src="http://www.pledgie.com/campaigns/19536.png?skin_name=chrome" border="0"></a></p>
@@ -80,16 +110,6 @@
 </ul><h2>See it in action!</h2>
 
 <p>fork this repository and run imdone in your local copy.  I use imdone for keep track of development of imdone</p>
-
-<h3>Tasks are just markdown links</h3>
-
-<p><strong>Put a task at the top of a list called "todo"</strong><br><code>[this is a task](#todo:0)</code>  </p>
-
-<p><strong>In javascript code</strong><br><code>//[this is a task in javascript code](#todo:0)</code>  </p>
-
-<p><strong>Put a task on the bottom of a list called "doing" (giving it a sort value of 1000 will put it at the bottom unless you have tons of tasks in the list)</strong><br><code>[this is a task in doing](#doing:1000)</code>  </p>
-
-<p><strong>Tasks are sorted by the number after the <code>:</code></strong>  </p>
 
 <p><strong>imdone will create a directory named imdone that will contain your custom configuration and a file to keep your lists in order</strong>  </p>
 
@@ -135,7 +155,11 @@
 <li><a>Convert front end to use backbone.js and require.js</a></li>
 </ul><h2>Release notes</h2>
 
-<h4>0.1.14</h4>
+<h4>0.1.17</h4>
+
+<ul>
+<li>Now using commander for better cli user experience</li>
+</ul><h4>0.1.14</h4>
 
 <ul>
 <li>replace mu2 with Handlebars</li>
