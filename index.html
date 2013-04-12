@@ -47,15 +47,20 @@
 
 <h2>Tasks are just markdown links!!!</h2>
 
-<p><strong>Put a task at the top of a list called "todo"</strong><br><code>[this is a task](#todo:0)</code>  </p>
+<p><strong>Put a task at the top of a list called "todo"</strong><br><code>[this is a task](#todo:10)</code>  </p>
 
 <p><strong>In javascript code</strong><br><code>//[this is a task in javascript code](#todo:0)</code>  </p>
 
-<p><strong>Put a task on the bottom of a list called "doing" (giving it a sort value of 1000 will put it at the bottom unless you have tons of tasks in the list)</strong><br><code>[this is a task in doing](#doing:1000)</code>  </p>
+<p><strong>Put a task on the bottom of a list called "doing" (giving it a sort value of 1000 will put it at the bottom unless you have tons of tasks in the list)</strong><br><code>[this is a task in doing](#todo:20)</code>  </p>
 
-<p><strong>Tasks are sorted by the number after the <code>:</code></strong>  </p>
+<p><strong>Tasks are sorted by the number after the <code>:</code></strong></p>
 
-<h2>Prerequisites </h2>
+<h2>More</h2>
+
+<ul>
+<li><strong>Edit and create files directly in iMDone using the <a href="http://ace.ajax.org">Ace editor</a>!</strong></li>
+<li><strong>Preview markdown files and print them as markdown or html!</strong></li>
+</ul><h2>Prerequisites </h2>
 
 <ul>
 <li>
@@ -80,22 +85,29 @@
 
 <p>Options:</p>
 
-<pre><code>-h, --help     output usage information
--V, --version  output the version number
--o, --open     Open imdone in the default browser
--s, --stop     Stop imdone server
+<pre><code>-h, --help                output usage information
+-V, --version             output the version number
+-o, --open                Open imdone in the default browser
+-s, --stop                Stop imdone server
+-d, --dirs &lt;directories&gt;  A comma separated list of project directories
 </code></pre>
 
-<p>Example:</p>
+<p>Examples:</p>
 
-<pre><code>Open imdone  in a browser with the current working directory as the project root
+<pre><code>Open imdone in a browser with the current working directory as the project root
 
 $ imdone -o
+
+Open imdone in a browser with list of project directories
+
+$ imdone -o -d projects/imdone,projects/myproject
 </code></pre>
 </li>
 </ul><h2>How you can help</h2>
 
-<p>If you like iMDone and want to help me make it better, you can make a contribution at pledgie.  Every donation is very much appreciated.<br><a href="http://www.pledgie.com/campaigns/19536"><img alt="Click here to lend your support to: iMDone - TODO, doing, done! and make a donation at www.pledgie.com !" src="http://www.pledgie.com/campaigns/19536.png?skin_name=chrome" border="0"></a></p>
+<p>If you like iMDone and want to help me make it better, you can make a contribution at pledgie.  Every donation is very much appreciated.  </p>
+
+<p><a href="http://www.pledgie.com/campaigns/19536"><img alt="Click here to lend your support to: iMDone - TODO, doing, done! and make a donation at www.pledgie.com !" src="http://www.pledgie.com/campaigns/19536.png?skin_name=chrome" border="0"></a></p>
 
 <p>If you have some spare time, then there is no better way to help an open source project than to get involved in one of the following ways.</p>
 
@@ -104,7 +116,7 @@ $ imdone -o
 <li>Suggest fixes by sending in patches</li>
 <li>Improve the code</li>
 <li>Help with unit and end-to-end testing</li>
-<li>Provide peer support on our forum or on the Sencha forum.</li>
+<li>Provide peer support on our forum</li>
 <li>Publish an article on your blog (send the link) to educate others regarding some aspect of the project</li>
 <li>Help with missing documentation</li>
 </ul><h2>See it in action!</h2>
@@ -128,7 +140,7 @@ $ imdone -o
 
 <pre><code>module.exports = {
     include:/^.*$/,
-    exclude:/^(node_modules|imdone|target)\/|^\.(git|svn)\/|\~$|\.(jpg|png|gif|swp)$/,
+    exclude:/^(node_modules|imdone|target)\/|\.(git|svn)\/|\~$|\.(jpg|png|gif|swp)$/,
     //github : {url : "http://www.github.com/piascikj/imdone"}, //Use this if you want links to point at github
     marked : {
         gfm: true,
@@ -148,14 +160,53 @@ $ imdone -o
 <li>
 <a>Support editing files directly using </a><a href="http://ajaxorg.github.com/ace/#nav=about">Ace editor</a>
 </li>
-<li>
-<a>Support creating files and folders directly using </a><a href="http://ajaxorg.github.com/ace/#nav=about">Ace editor</a>
-</li>
-<li><a>Preview of markdown files</a></li>
-<li><a>Convert front end to use backbone.js and require.js</a></li>
+<li><a>Show file explorer when editing files</a></li>
+<li><a>Enable svn and git commit after file changes</a></li>
+<li><a>Convert front end to use backbone.js</a></li>
+<li><a>respect marked configuration in client javascript</a></li>
 </ul><h2>Release notes</h2>
 
-<h4>0.1.17</h4>
+<h4>0.1.27</h4>
+
+<ul>
+<li>Fix styles for code (Eliminate box shadow)</li>
+</ul><h4>0.1.26</h4>
+
+<ul>
+<li>Allow user to create files</li>
+</ul><h4>0.1.25</h4>
+
+<ul>
+<li>Sort lists in dropdown menu</li>
+<li>Open files for editing</li>
+<li>Loading dependencies with require (Strange workaround for ace)</li>
+</ul><h4>0.1.24</h4>
+
+<ul>
+<li>Print source and markdown preview</li>
+</ul><h4>0.1.23</h4>
+
+<ul>
+<li>Upgrade express to latest version</li>
+<li>Preview markdown files</li>
+</ul><h4>0.1.22</h4>
+
+<ul>
+<li>Fix rename list bug introduced in last version</li>
+</ul><h4>0.1.20</h4>
+
+<ul>
+<li>Open multiple projects at once from command line</li>
+</ul><h4>0.1.19</h4>
+
+<ul>
+<li>Bug fixes.  Sorting tasks was broken</li>
+</ul><h4>0.1.18</h4>
+
+<ul>
+<li>Dark theme</li>
+<li>Ace editor</li>
+</ul><h4>0.1.17</h4>
 
 <ul>
 <li>Now using commander for better cli user experience</li>
