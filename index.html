@@ -39,9 +39,7 @@
         <ul></ul>
       </nav>
       <section>
-        <h1>iMDone</h1>
-
-<h2>Keep your tasks in your work!!!</h2>
+        <h2>Keep your tasks in your work!!!</h2>
 
 <p>Create tasks in any file using markdown syntax and organize them with a local kanban board.  Your tasks are in your files, so you can share your board on <a href="http://www.github.com">github</a>, <a href="http://www.dropbox.com">dropbox</a>, or any other cloud storage provider.</p>
 
@@ -141,7 +139,6 @@ $ imdone -o -d projects/imdone,projects/myproject
 <pre><code>module.exports = {
     include:/^.*$/,
     exclude:/^(node_modules|imdone|target)\/|\.(git|svn)\/|\~$|\.(jpg|png|gif|swp)$/,
-    //github : {url : "http://www.github.com/piascikj/imdone"}, //Use this if you want links to point at github
     marked : {
         gfm: true,
         pedantic: false,
@@ -157,16 +154,27 @@ $ imdone -o -d projects/imdone,projects/myproject
 <h2>Roadmap</h2>
 
 <ul>
-<li>
-<a>Support editing files directly using </a><a href="http://ajaxorg.github.com/ace/#nav=about">Ace editor</a>
-</li>
+<li><a>User should be able to easily access recently edited files</a></li>
 <li><a>Show file explorer when editing files</a></li>
 <li><a>Enable svn and git commit after file changes</a></li>
 <li><a>Convert front end to use backbone.js</a></li>
 <li><a>respect marked configuration in client javascript</a></li>
 </ul><h2>Release notes</h2>
 
-<h4>0.1.27</h4>
+<h4>0.1.29</h4>
+
+<ul>
+<li>Added recent files to open dialog</li>
+<li>Made editor full page width</li>
+<li>Added notification for current task</li>
+<li>Added notification for save</li>
+<li>Added prominant close file button</li>
+<li>Removed open in github option</li>
+</ul><h4>0.1.28</h4>
+
+<ul>
+<li>Display filename on edit radio button</li>
+</ul><h4>0.1.27</h4>
 
 <ul>
 <li>Fix styles for code (Eliminate box shadow)</li>
