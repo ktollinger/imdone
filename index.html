@@ -18,7 +18,7 @@
 
       <header>
         <h1>iMDone</h1>
-        <p>TODO, doing done!</p>
+        <p>A simple scrum board and markdown wiki for geeks.</p>
       </header>
 
       <div id="banner">
@@ -39,9 +39,11 @@
         <ul></ul>
       </nav>
       <section>
-        <h2>Keep your tasks in your work!!!</h2>
+        <p><a href="https://gemnasium.com/piascikj/imdone"><img src="https://gemnasium.com/piascikj/imdone.png" alt="Dependency Status"></a></p>
 
-<p>Create tasks in any file using markdown syntax and organize them with a local kanban board.  Your tasks are in your files, so you can share your board on <a href="http://www.github.com">github</a>, <a href="http://www.dropbox.com">dropbox</a>, or any other cloud storage provider.</p>
+<h2>Keep your tasks in your work!!!</h2>
+
+<p>A simple scrum board and markdown wiki for geeks.  No DB needed!  Your tasks are in your source code, so you can share your board on <a href="http://www.github.com">github</a>, <a href="http://www.dropbox.com">dropbox</a>, or any other cloud storage provider.</p>
 
 <h2>Tasks are just markdown links!!!</h2>
 
@@ -159,117 +161,9 @@ $ imdone -o -d projects/imdone,projects/myproject
 <li><a>Enable svn and git commit after file changes</a></li>
 <li><a>Convert front end to use backbone.js</a></li>
 <li><a>respect marked configuration in client javascript</a></li>
-</ul><h2>Release notes</h2>
-
-<h4>0.1.29</h4>
-
-<ul>
-<li>Added recent files to open dialog</li>
-<li>Made editor full page width</li>
-<li>Added notification for current task</li>
-<li>Added notification for save</li>
-<li>Added prominant close file button</li>
-<li>Removed open in github option</li>
-</ul><h4>0.1.28</h4>
-
-<ul>
-<li>Display filename on edit radio button</li>
-</ul><h4>0.1.27</h4>
-
-<ul>
-<li>Fix styles for code (Eliminate box shadow)</li>
-</ul><h4>0.1.26</h4>
-
-<ul>
-<li>Allow user to create files</li>
-</ul><h4>0.1.25</h4>
-
-<ul>
-<li>Sort lists in dropdown menu</li>
-<li>Open files for editing</li>
-<li>Loading dependencies with require (Strange workaround for ace)</li>
-</ul><h4>0.1.24</h4>
-
-<ul>
-<li>Print source and markdown preview</li>
-</ul><h4>0.1.23</h4>
-
-<ul>
-<li>Upgrade express to latest version</li>
-<li>Preview markdown files</li>
-</ul><h4>0.1.22</h4>
-
-<ul>
-<li>Fix rename list bug introduced in last version</li>
-</ul><h4>0.1.20</h4>
-
-<ul>
-<li>Open multiple projects at once from command line</li>
-</ul><h4>0.1.19</h4>
-
-<ul>
-<li>Bug fixes.  Sorting tasks was broken</li>
-</ul><h4>0.1.18</h4>
-
-<ul>
-<li>Dark theme</li>
-<li>Ace editor</li>
-</ul><h4>0.1.17</h4>
-
-<ul>
-<li>Now using commander for better cli user experience</li>
-</ul><h4>0.1.14</h4>
-
-<ul>
-<li>replace mu2 with Handlebars</li>
-</ul><h4>0.1.13</h4>
-
-<ul>
-<li>Moved open page to open cli option</li>
-<li>switched to socket.io for near real-time updates</li>
-</ul><h4>0.1.11</h4>
-
-<ul>
-<li>
-<p>Now able to hide a list from board using hidden</p>
-
-<h5>imdone/data.js is now formatted like this</h5>
-
-<p>{
-    lists:[Array of list names],
-    hidden:[Array of list names to hide]
-}</p>
-</li>
-</ul><h4>0.1.10</h4>
-
-<ul>
-<li>Source view if github is not set</li>
-<li>Default lists are respected if added to imdone/data.js</li>
-<li>Lists won't be removed unless specifically removed in ui or imdone/data.js</li>
-</ul><h4>0.1.8</h4>
-
-<ul>
-<li>Sort is fixed for multiple projects</li>
-</ul><h4>0.1.7</h4>
-
-<ul>
-<li>Start in multiple project directories</li>
-</ul><h4>0.1.6</h4>
-
-<ul>
-<li>Added filter by file name</li>
-</ul><h4>0.1.4</h4>
-
-<ul>
-<li>Use line number when loading page in github</li>
-</ul><h4>0.1.3</h4>
-
-<ul>
-<li>include added to config for files to include.  Order is include &gt; Exclude</li>
-</ul><h4>0.1.2</h4>
-
-<ul>
-<li>Using websockets to refresh board on changes</li>
+<li><a>User should be able to use TOC in preview mode for md files</a></li>
+<li><a>User should be able to quickly add a date and assigned to tasks using @&lt;user&gt; @&lt;date&gt;</a></li>
+<li><a>User should be a able to use keyboard shortcut for preview</a></li>
 </ul>
       </section>
       <footer>
