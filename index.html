@@ -28,42 +28,60 @@
     <div id="content-wrapper">
       <div class="inner clearfix">
         <section id="main-content">
-          <h1>iMDone</h1>
+          <h1>
+<a name="imdone" class="anchor" href="#imdone"><span class="octicon octicon-link"></span></a>iMDone</h1>
 
 <p><a href="https://gemnasium.com/piascikj/imdone"><img src="https://gemnasium.com/piascikj/imdone.png" alt="Dependency Status"></a>
 <a href="https://npmjs.org/package/imdone"><img src="https://badge.fury.io/js/imdone.png" alt="NPM version"></a>
 <a href="http://flattr.com/thing/1286067/iMDone"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this"></a></p>
 
-<h2>Keep your tasks in your work!!!</h2>
+<h2>
+<a name="keep-your-tasks-in-your-work" class="anchor" href="#keep-your-tasks-in-your-work"><span class="octicon octicon-link"></span></a>Keep your tasks in your work!!!</h2>
 
 <p>A simple scrum board and markdown wiki for geeks.  No DB needed!  Your tasks are in your source code, so you can share your board on <a href="http://www.github.com">github</a>.</p>
 
-<h2>Tasks are just markdown links!!!</h2>
+<h3>
+<a name="tasks-are-just-markdown-links" class="anchor" href="#tasks-are-just-markdown-links"><span class="octicon octicon-link"></span></a>Tasks are just markdown links!!!</h3>
 
-<p><strong>Put a task at the top of a list called "todo"</strong><br><code>[this is a task](#todo:10)</code>  </p>
+<p><strong>Put a task at the top of a list called "todo"</strong><br><code>[this is a task](#todo:0)</code>  </p>
 
 <p><strong>In javascript code</strong><br><code>//[this is a task in javascript code](#todo:0)</code>  </p>
 
-<p><strong>Put a task on the bottom of a list called "doing" (giving it a sort value of 1000 will put it at the bottom unless you have tons of tasks in the list)</strong><br><code>[this is a task in doing](#todo:20)</code>  </p>
+<p><strong>Put a task on the bottom of a list called "doing" (giving it a sort value of 1000 will put it at the bottom unless you have tons of tasks in the list)</strong><br><code>[this is a task in doing](#todo:1000)</code>  </p>
 
 <p><strong>Tasks are sorted by the number after the <code>:</code></strong></p>
 
-<h2>More</h2>
+<h3>
+<a name="filter-by-path" class="anchor" href="#filter-by-path"><span class="octicon octicon-link"></span></a>Filter by path</h3>
+
+<p>You can filter by path using the filter box in the top right corner, or by embedding a filter link in a task like this:  </p>
+
+<p><code>[Filter by [src/main/java](#filter/src/main/java)](#filters:0)</code>  </p>
+
+<p>This would create a filters list containing this task and a link that will populate the filter box with <em>src/main/java</em></p>
+
+<h2>
+<a name="more" class="anchor" href="#more"><span class="octicon octicon-link"></span></a>More</h2>
 
 <ul>
 <li><strong>Edit and create files directly in iMDone using the <a href="http://ace.ajax.org">Ace editor</a>!</strong></li>
 <li><strong>Stay focused on your current task!  It's always there in the bottom right corner.</strong></li>
 <li><strong>Create files by just linking to them in markdown files</strong></li>
 <li><strong>Preview markdown files and print them as markdown or html!</strong></li>
-<li><strong>Use it to navigate between markdown files.</strong></li>
-</ul><h2>Keyboard shortcuts</h2>
+<li><strong>Hide and show lists</strong></li>
+<li><strong>Delete files</strong></li>
+</ul><h2>
+<a name="keyboard-shortcuts" class="anchor" href="#keyboard-shortcuts"><span class="octicon octicon-link"></span></a>Keyboard shortcuts</h2>
 
-<pre><code>Ctrl+Shift+s    save file
-esc             exit editor/preview
+<pre><code>Shift+Ctrl+s    save file
+Shift+Ctrl+x    remove file
+esc             File View - exit editor/preview
+                List View - clear filter
 i               when in preview, edit file
 </code></pre>
 
-<h2>Prerequisites </h2>
+<h2>
+<a name="prerequisites-" class="anchor" href="#prerequisites-"><span class="octicon octicon-link"></span></a>Prerequisites </h2>
 
 <ul>
 <li>
@@ -72,11 +90,13 @@ i               when in preview, edit file
 <li>
 <a href="https://npmjs.org/">npm</a> is <a href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager">installed</a>
 </li>
-</ul><h2>Install</h2>
+</ul><h2>
+<a name="install" class="anchor" href="#install"><span class="octicon octicon-link"></span></a>Install</h2>
 
 <p><code>npm install -g imdone</code></p>
 
-<h2>Run</h2>
+<h2>
+<a name="run" class="anchor" href="#run"><span class="octicon octicon-link"></span></a>Run</h2>
 
 <ul>
 <li><p>open a terminal window and navigate to your local project directory and run:<br><code>imdone -o</code></p></li>
@@ -105,7 +125,8 @@ Open imdone in a browser with list of project directories
 $ imdone -o -d projects/imdone,projects/myproject
 </code></pre>
 </li>
-</ul><h2>How you can help</h2>
+</ul><h2>
+<a name="how-you-can-help" class="anchor" href="#how-you-can-help"><span class="octicon octicon-link"></span></a>How you can help</h2>
 
 <p>If you like iMDone and want to help me make it better, you can make a contribution at pledgie.  Every donation is very much appreciated.  </p>
 
@@ -121,7 +142,8 @@ $ imdone -o -d projects/imdone,projects/myproject
 <li>Provide peer support on our forum</li>
 <li>Publish an article on your blog (send the link) to educate others regarding some aspect of the project</li>
 <li>Help with missing documentation</li>
-</ul><h2>See it in action!</h2>
+</ul><h2>
+<a name="see-it-in-action" class="anchor" href="#see-it-in-action"><span class="octicon octicon-link"></span></a>See it in action!</h2>
 
 <p>Fork this repository and run imdone in your local copy.  I use imdone for keep track of imdone development.</p>
 
@@ -136,7 +158,8 @@ $ imdone -o -d projects/imdone,projects/myproject
 <li>You can filter by the file name the task are in.<br>
 </li>
 <li>As you type in the "filter by file name" field, tasks are filtered</li>
-</ul><h2>Configuration</h2>
+</ul><h2>
+<a name="configuration" class="anchor" href="#configuration"><span class="octicon octicon-link"></span></a>Configuration</h2>
 
 <p>After running imdone for the first time, modify imdone/imdone.js in your project directory.  The default config looks like this.  Your imdone.js will extend this.</p>
 
@@ -151,11 +174,14 @@ $ imdone -o -d projects/imdone,projects/myproject
 };
 </code></pre>
 
-<h2>Testing</h2>
+<h2>
+<a name="testing" class="anchor" href="#testing"><span class="octicon octicon-link"></span></a>Testing</h2>
 
-<p>iMDone has been tested on my Ubuntu 12.04 desktop using chrome 23.0.x and Firefox 19.x.  It should work on any machine that has nodejs and npm installed and for auto update of boards, a browser that supports websockets.</p>
-
-<h2>Roadmap</h2>
+<ul>
+<li>iMDone has been tested on my Ubuntu 12.04 desktop using chrome 23.0.x and Firefox 19.x.  It should work on any machine that has nodejs and npm installed and for auto update of boards, a browser that supports websockets.</li>
+<li>We us <a href="http://pivotal.github.io/jasmine/">jasmine</a> and <a href="https://github.com/mhevery/jasmine-node">mhevery/jasmine-node</a> for testing.</li>
+</ul><h2>
+<a name="roadmap" class="anchor" href="#roadmap"><span class="octicon octicon-link"></span></a>Roadmap</h2>
 
 <ul>
 <li><a>Show file explorer when editing files</a></li>
@@ -167,8 +193,7 @@ $ imdone -o -d projects/imdone,projects/myproject
 <li><a>User should be able to get quick help with keyboard shortcuts</a></li>
 <li><a>User should get a guided tour</a></li>
 <li>
-<a>Enable vfs </a><a href="https://github.com/c9/vfs-socket">https://github.com/c9/vfs-socket</a>
-</li>
+<a>Enable vfs </a><a href="https://github.com/c9/vfs-socket">https://github.com/c9/vfs-socket</a> as method of interacting with other storage providers.  Use <a href="https://npmjs.org/package/broadway">Broadway</a> for IOC.</li>
 </ul>
         </section>
 
