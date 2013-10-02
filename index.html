@@ -3,33 +3,38 @@
   <head>
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+
     <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
     <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
-
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
 
     <title>iMDone by piascikj</title>
   </head>
 
   <body>
+
     <header>
-      <div class="inner">
+      <div class="container">
         <h1>iMDone</h1>
         <h2>A simple scrum board and markdown wiki for geeks.</h2>
-        <a href="https://github.com/piascikj/imdone" class="button"><small>View project on</small>GitHub</a>
+
+        <section id="downloads">
+          <a href="https://github.com/piascikj/imdone/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/piascikj/imdone/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/piascikj/imdone" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
       </div>
     </header>
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>
-<a name="imdone" class="anchor" href="#imdone"><span class="octicon octicon-link"></span></a>iMDone</h1>
+    <div class="container">
+      <section id="main_content">
+        <pre><code>  _   __  __   _____                         
+ (_) |  \/  | |  __ \                        
+  _  | \  / | | |  | |   ___    _ __     ___ 
+ | | | |\/| | | |  | |  / _ \  | '_ \   / _ \
+ | | | |  | | | |__| | | (_) | | | | | |  __/
+ |_| |_|  |_| |_____/   \___/  |_| |_|  \___|
+</code></pre>
 
 <p><a href="https://gemnasium.com/piascikj/imdone"><img src="https://gemnasium.com/piascikj/imdone.png" alt="Dependency Status"></a>
 <a href="https://npmjs.org/package/imdone"><img src="https://badge.fury.io/js/imdone.png" alt="NPM version"></a>
@@ -46,6 +51,7 @@
 <p><strong>Put a task at the top of a list called "todo"</strong>  </p>
 
 <pre><code>[this is a task](#todo:0)
+[this is another task](#todo:10)
 </code></pre>
 
 <p><strong>In javascript code</strong>  </p>
@@ -71,7 +77,7 @@
 <p>This would create a filters list containing this task and a link that will populate the filter box with <em>src/main/java</em></p>
 
 <h2>
-<a name="more" class="anchor" href="#more"><span class="octicon octicon-link"></span></a>More</h2>
+<a name="search-and-more" class="anchor" href="#search-and-more"><span class="octicon octicon-link"></span></a>Search and more!</h2>
 
 <ul>
 <li><strong>Edit and create files directly in iMDone using the <a href="http://ace.ajax.org">Ace editor</a>!</strong></li>
@@ -80,6 +86,7 @@
 <li><strong>Preview markdown files and print them as markdown or html!</strong></li>
 <li><strong>Hide and show lists</strong></li>
 <li><strong>Delete files</strong></li>
+<li><strong>Search</strong></li>
 </ul><h2>
 <a name="keyboard-shortcuts" class="anchor" href="#keyboard-shortcuts"><span class="octicon octicon-link"></span></a>Keyboard shortcuts</h2>
 
@@ -197,16 +204,16 @@ Examples:
 <a name="roadmap" class="anchor" href="#roadmap"><span class="octicon octicon-link"></span></a>Roadmap</h2>
 
 <ul>
-<li><a>Show file explorer when editing files</a></li>
 <li><a>Enable svn and git commit after file changes</a></li>
 <li><a>Convert front end to use backbone.js</a></li>
 <li><a>respect marked configuration in client javascript</a></li>
+<li><a>User should be able to remove task syntax with hotkey when in task text</a></li>
 <li><a>User should be able to use TOC in preview mode for md files</a></li>
 <li><a>User should be able to quickly add a date and assigned to tasks using @&lt;user&gt; @&lt;date&gt;</a></li>
 <li><a>User should be able to get quick help with keyboard shortcuts</a></li>
 <li><a>User should get a guided tour</a></li>
-<li>[Enable vfs <a href="https://github.com/c9/vfs-socket">https://github.com/c9/vfs-socket</a> as method of interacting with other storage providers.<br>
-</li>
+<li>
+<a>Enable vfs </a><a href="https://github.com/c9/vfs-socket">https://github.com/c9/vfs-socket</a> as method of interacting with other storage providers.</li>
 <li>
 <a>Use </a><a href="https://npmjs.org/package/broadway">Broadway</a> for IOC.</li>
 </ul><h2>
@@ -286,26 +293,10 @@ Examples:
 <li>Repository</li>
 <li>Project</li>
 </ul>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/piascikj/imdone/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/piascikj/imdone/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/piascikj/imdone"></a> is maintained by <a href="https://github.com/piascikj">piascikj</a>.</p>
-
-          <p>This page was generated by <a href="pages.github.com">GitHub Pages</a> using the Architect theme by <a href="http://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+      </section>
     </div>
 
-            <script type="text/javascript">
+              <script type="text/javascript">
             var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
             document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
           </script>
