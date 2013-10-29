@@ -1,13 +1,16 @@
 //the require library is configuring paths
 require.config({
+    baseUrl: "lib",
     paths: {
                 //tries to load jQuery from Google's CDN first and falls back
                 //to load locally
-        "bootstrap": "libs/bootstrap/dist/js/bootstrap",
+        "bootstrap": "bootstrap/js/bootstrap.min",
         "jquery": ["http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min",
-                    "libs/jquery/jquery"],
-        "underscore": "libs/underscore/underscore-min",
-        "backbone": "libs/backbone/backbone-min"
+                    "jquery/jquery"],
+        "underscore": "underscore/js/underscore-min",
+        "backbone": "backbone/js/backbone-min",
+        "marked": "marked/js/marked",
+        "app": "../js/app"
     },
     shim: {
         // Bootstrap

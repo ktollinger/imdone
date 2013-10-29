@@ -1,0 +1,19 @@
+{
+  "name": "imdone",
+  "version": "0.0.0",
+  "description": "imdone site",
+  "main": "index.js",
+  "dependencies": {
+  },
+  "devDependencies": {
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/piascikj/imdone.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/piascikj/imdone/issues"
+  }
+}

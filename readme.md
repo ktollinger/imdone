@@ -93,3 +93,4 @@ References
 - [Setting up a Require.js and Backbone.js project quickly with Bower](http://imstillreallybored.com/2013/08/setting-up-a-require-js-and-backbone-js-project-quickly-with-bower/)
 - [Starter Template for Bootstrap](http://getbootstrap.com/examples/starter-template/)
 - [Flatdoc](http://ricostacruz.com/flatdoc/)
+- [bower-installer](https://npmjs.org/package/bower-installer)

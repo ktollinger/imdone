@@ -2,10 +2,31 @@
   "name": "RequireJS Starter",
   "version": "1.0.0",
   "dependencies": {
+    "jquery": null,
     "bootstrap": null,
     "backbone": null,
     "underscore": null,
     "requirejs": null,
     "marked": "~0.2.9"
+  },
+
+  "exportsOverride": {
+    "requirejs": {
+      "js": "require.js"
+    },
+    "underscore": {
+      "js": "underscore-min.js"
+    },
+    "marked": {
+      "js": "lib/marked.js"
+    },
+    "backbone": {
+      "js": "backbone-min.js"
+    },
+    "bootstrap": {
+      "js": "dist/js/*.js",
+      "css": "dist/css/*.css",
+      "fonts": "dist/fonts/*"
+    }
   }
 }
