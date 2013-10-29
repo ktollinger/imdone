@@ -1,10 +1,11 @@
 {
-    "name": "RequireJS Starter",
-    "version": "1.0.0",
-    "dependencies": {
-        "bootstrap": null,
-        "backbone": null,
-        "underscore": null,
-        "requirejs": null
-    }
+  "name": "RequireJS Starter",
+  "version": "1.0.0",
+  "dependencies": {
+    "bootstrap": null,
+    "backbone": null,
+    "underscore": null,
+    "requirejs": null,
+    "marked": "~0.2.9"
+  }
 }
