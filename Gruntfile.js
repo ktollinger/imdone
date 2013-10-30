@@ -28,7 +28,8 @@ module.exports = function(grunt) {
           postCompile: function(src, context) {},
           templateContext: {
             title: "iMDone",
-            description: ""
+            description: "",
+            project: "piascikj/imdone"
           },
           markdownOptions: {
             gfm: true

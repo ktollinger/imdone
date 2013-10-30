@@ -5,10 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/main.css" rel="stylesheet">
-    <link href="lib/prismjs/css/prism-twilight.css" rel="stylesheet" media="screen">
+    <link href="lib/prismjs/css/prism-okaidia.css" rel="stylesheet" media="screen">
     <link href="lib/bootswatch/css/bootstrap.min.css" rel="stylesheet" media="screen">
   </head>
   <body>
+    <a href="https://github.com/piascikj/imdone">
+      <img style="position: fixed; top: 0; right: 0; border: 0; z-index:2000;"
+     src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png" alt="Fork me on GitHub"></a>
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -26,7 +29,7 @@
     <div class="container">
 
       <div class="readme-template language-javascript">
-        <pre><code class="lang-bash">
+        <pre><code>
       _   __  __   _____                         
      (_) |  \/  | |  __ \                        
       _  | \  / | | |  | |   ___    _ __     ___ 
@@ -40,16 +43,16 @@
 <p>A simple scrum board and markdown wiki for geeks.  No DB needed!  Your tasks are in your source code, so you can share your board on <a href="http://www.github.com">github</a>.</p>
 <h3>Tasks are just markdown links!!!</h3>
 <p><strong>Put a task at the top of a list called &quot;todo&quot;</strong>  </p>
-<pre><code class="lang-Markdown">[this is a task](#todo:0)
+<pre><code>[this is a task](#todo:0)
 [this is another task](#todo:10)</code></pre>
 <p><strong>In javascript code</strong>  </p>
 <pre><code class="lang-javascript">//[this is a task in javascript code](#todo:0)</code></pre>
 <p><strong>Put a task on the bottom of a list called &quot;doing&quot; (giving it a sort value of 1000 will put it at the bottom unless you have tons of tasks in the list)</strong>  </p>
-<pre><code class="lang-Markdown">[this is a task in doing](#doing:40)</code></pre>
+<pre><code>[this is a task in doing](#doing:40)</code></pre>
 <p><strong>Tasks are sorted by the number after the <code>:</code></strong></p>
 <h3>Filter by path</h3>
 <p>You can filter by path using the filter box in the top right corner, or by embedding a filter link in a task like this:  </p>
-<pre><code class="lang-Markdown">[Filter by [src/main/java](#filter/src/main/java)](#filters:0)</code></pre>
+<pre><code>[Filter by [src/main/java](#filter/src/main/java)](#filters:0)</code></pre>
 <p>This would create a filters list containing this task and a link that will populate the filter box with <em>src/main/java</em></p>
 <h2>Search and more!</h2>
 <ul>
@@ -62,7 +65,7 @@
 <li><strong>Search with highlighted results</strong></li>
 </ul>
 <h2>Keyboard shortcuts</h2>
-<pre><code class="lang-bash">Shift+Ctrl+s    Save file
+<pre><code>Shift+Ctrl+s    Save file
 Shift+Ctrl+x    Remove file
 esc             File View - exit editor/preview
                 List View - clear filter
@@ -75,16 +78,16 @@ Ctrl+f          When in edit mode, search current file</code></pre>
 <li><a href="https://npmjs.org/">npm</a> is <a href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager">installed</a></li>
 </ul>
 <h2>Install</h2>
-<pre><code class="lang-bash">npm install -g imdone</code></pre>
+<pre><code>npm install -g imdone</code></pre>
 <h2>Run</h2>
 <ul>
 <li>open a terminal window and navigate to your local project directory and run:  </li>
 </ul>
-<pre><code class="lang-bash">imdone -o</code></pre>
+<pre><code>imdone -o</code></pre>
 <ul>
 <li>Here&#39;s the help output</li>
 </ul>
-<pre><code class="lang-bash">Usage: imdone [options]
+<pre><code>Usage: imdone [options]
 
 Options:
 
