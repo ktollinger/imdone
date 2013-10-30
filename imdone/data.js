@@ -1,4 +1,9 @@
 {
-  "lists": [],
+  "lists": [
+    "todo",
+    "doing",
+    "filters",
+    "planning"
+  ],
   "hidden": []
 }
