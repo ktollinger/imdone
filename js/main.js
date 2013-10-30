@@ -7,7 +7,7 @@ require.config({
     "underscore" : "underscore/js/underscore-min",
     "backbone"   : "backbone/js/backbone-min",
     "marked"     : "marked/js/marked",
-    "prism"    : "prismjs/js/prism.js",
+    "prism"      : "prismjs/js/prism",
     "app"        : "../js/app"
   },
   shim: {

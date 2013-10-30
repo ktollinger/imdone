@@ -5,18 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
     <link href="css/main.css" rel="stylesheet">
+    <link href="lib/prismjs/css/prism-twilight.css" rel="stylesheet" media="screen">
     <link href="lib/bootswatch/css/bootstrap.min.css" rel="stylesheet" media="screen">
-    <link href="lib/prismjs/prism.css">
   </head>
   <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
           <a class="navbar-brand" href="#">iMDone</a>
         </div>
         <div class="collapse navbar-collapse">
@@ -31,12 +26,13 @@
     <div class="container">
 
       <div class="readme-template">
-        <pre><code>  _   __  __   _____                         
- (_) |  \/  | |  __ \                        
-  _  | \  / | | |  | |   ___    _ __     ___ 
- | | | |\/| | | |  | |  / _ \  | &#39;_ \   / _ \
- | | | |  | | | |__| | | (_) | | | | | |  __/
- |_| |_|  |_| |_____/   \___/  |_| |_|  \___|</code></pre>
+        <pre><code class="lang-sh">
+      _   __  __   _____                         
+     (_) |  \/  | |  __ \                        
+      _  | \  / | | |  | |   ___    _ __     ___ 
+     | | | |\/| | | |  | |  / _ \  | &#39;_ \   / _ \
+     | | | |  | | | |__| | | (_) | | | | | |  __/
+     |_| |_|  |_| |_____/   \___/  |_| |_|  \___|</code></pre>
 <p><a href="https://gemnasium.com/piascikj/imdone"><img src="https://gemnasium.com/piascikj/imdone.png" alt="Dependency Status"></a>
 <a href="https://npmjs.org/package/imdone"><img src="https://badge.fury.io/js/imdone.png" alt="NPM version"></a>
 <a href="http://flattr.com/thing/1286067/iMDone"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this"></a></p>
@@ -44,16 +40,16 @@
 <p>A simple scrum board and markdown wiki for geeks.  No DB needed!  Your tasks are in your source code, so you can share your board on <a href="http://www.github.com">github</a>.</p>
 <h3>Tasks are just markdown links!!!</h3>
 <p><strong>Put a task at the top of a list called &quot;todo&quot;</strong>  </p>
-<pre><code>[this is a task](#todo:0)
+<pre><code class="lang-Markdown">[this is a task](#todo:0)
 [this is another task](#todo:10)</code></pre>
 <p><strong>In javascript code</strong>  </p>
-<pre><code>//[this is a task in javascript code](#todo:0)</code></pre>
+<pre><code class="lang-javascript">//[this is a task in javascript code](#todo:0)</code></pre>
 <p><strong>Put a task on the bottom of a list called &quot;doing&quot; (giving it a sort value of 1000 will put it at the bottom unless you have tons of tasks in the list)</strong>  </p>
-<pre><code>[this is a task in doing](#doing:30)</code></pre>
+<pre><code class="lang-Markdown">[this is a task in doing](#doing:40)</code></pre>
 <p><strong>Tasks are sorted by the number after the <code>:</code></strong></p>
 <h3>Filter by path</h3>
 <p>You can filter by path using the filter box in the top right corner, or by embedding a filter link in a task like this:  </p>
-<pre><code>[Filter by [src/main/java](#filter/src/main/java)](#filters:0)</code></pre>
+<pre><code class="lang-Markdown">[Filter by [src/main/java](#filter/src/main/java)](#filters:0)</code></pre>
 <p>This would create a filters list containing this task and a link that will populate the filter box with <em>src/main/java</em></p>
 <h2>Search and more!</h2>
 <ul>
@@ -66,7 +62,7 @@
 <li><strong>Search with highlighted results</strong></li>
 </ul>
 <h2>Keyboard shortcuts</h2>
-<pre><code>Shift+Ctrl+s    Save file
+<pre><code class="lang-sh">Shift+Ctrl+s    Save file
 Shift+Ctrl+x    Remove file
 esc             File View - exit editor/preview
                 List View - clear filter
@@ -79,16 +75,16 @@ Ctrl+f          When in edit mode, search current file</code></pre>
 <li><a href="https://npmjs.org/">npm</a> is <a href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager">installed</a></li>
 </ul>
 <h2>Install</h2>
-<pre><code>npm install -g imdone</code></pre>
+<pre><code class="lang-sh">npm install -g imdone</code></pre>
 <h2>Run</h2>
 <ul>
 <li>open a terminal window and navigate to your local project directory and run:  </li>
 </ul>
-<pre><code>imdone -o</code></pre>
+<pre><code class="lang-sh">imdone -o</code></pre>
 <ul>
 <li>Here&#39;s the help output</li>
 </ul>
-<pre><code>Usage: imdone [options]
+<pre><code class="lang-sh">Usage: imdone [options]
 
 Options:
 
@@ -130,15 +126,15 @@ Examples:
 <p><strong>Filter by file name</strong><br>- You can filter by the file name the task are in.<br>- As you type in the &quot;filter by file name&quot; field, tasks are filtered</p>
 <h2>Configuration</h2>
 <p>After running imdone for the first time, modify imdone/imdone.js in your project directory.  The default config looks like this.  Your imdone.js will extend this.</p>
-<pre><code>module.exports = {
-    include:/^.*$/,
-    exclude:/^(node_modules|imdone|target)\/|\.(git|svn)\/|\~$|\.(jpg|png|gif|swp)$/,
-    marked : {
-        gfm: true,
-        pedantic: false,
-        sanitize: true
-    }
-};</code></pre>
+<pre><code class="lang-javascript">    module.exports = {
+        include:/^.*$/,
+        exclude:/^(node_modules|imdone|target)\/|\.(git|svn)\/|\~$|\.(jpg|png|gif|swp)$/,
+        marked : {
+            gfm: true,
+            pedantic: false,
+            sanitize: true
+        }
+    };</code></pre>
 <h2>Testing</h2>
 <ul>
 <li>iMDone has been tested on my Ubuntu 12.04 desktop using chrome 23.0.x and Firefox 19.x.  It should work on any machine that has nodejs and npm installed and for auto update of boards, a browser that supports websockets.</li>
@@ -146,13 +142,13 @@ Examples:
 </ul>
 <h2>Roadmap</h2>
 <ul>
-<li><a href="#planning:190">Enable svn and git commit after file changes</a></li>
-<li><a href="#planning:260">Convert front end to use backbone.js</a></li>
+<li><a href="#planning:180">Enable svn and git commit after file changes</a></li>
+<li><a href="#planning:250">Convert front end to use backbone.js</a></li>
 <li><a href="#todo:130">respect marked configuration in client javascript</a></li>
-<li><a href="#planning:110">User should be able to remove task syntax with hotkey when in task text</a></li>
-<li><a href="#planning:90">User should be able to use TOC in preview mode for md files</a></li>
-<li><a href="#planning:200">User should be able to quickly add a date and assigned to tasks using @&lt;user&gt; @&lt;date&gt;</a></li>
-<li><a href="#planning:270">User should be able to get quick help with keyboard shortcuts</a></li>
+<li><a href="#planning:100">User should be able to remove task syntax with hotkey when in task text</a></li>
+<li><a href="#planning:80">User should be able to use TOC in preview mode for md files</a></li>
+<li><a href="#planning:190">User should be able to quickly add a date and assigned to tasks using @&lt;user&gt; @&lt;date&gt;</a></li>
+<li><a href="#planning:260">User should be able to get quick help with keyboard shortcuts</a></li>
 <li><a href="#todo:120">User should get a guided tour</a></li>
 <li><a href="#planning:30">Enable vfs <a href="https://github.com/c9/vfs-socket">https://github.com/c9/vfs-socket</a> as method of interacting with other storage providers.</a></li>
 <li><a href="#planning:0">Use <a href="https://npmjs.org/package/broadway">Broadway</a> for IOC.</a></li>

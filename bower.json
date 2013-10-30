@@ -17,13 +17,13 @@
       "js": "require.js"
     },
     "underscore": {
-      "js": "underscore-min.js"
+      "js": ["underscore-min.js", "underscore-min.map"]
     },
     "marked": {
       "js": "lib/marked.js"
     },
     "backbone": {
-      "js": "backbone-min.js"
+      "js": ["backbone-min.js","backbone-min.map"]
     },
     "bootstrap": {
       "js": "dist/js/*.js",
@@ -36,6 +36,10 @@
     "font-awesome": {
       "css": "css/*.css",
       "fonts": "font/*"
+    },
+    "prismjs": {
+      "css": "*.css",
+      "js": "*.js"
     }
   }
 }
