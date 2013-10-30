@@ -32,6 +32,10 @@
     },
     "bootswatch": {
       "css": "cyborg/*.css"
+    },
+    "font-awesome": {
+      "css": "css/*.css",
+      "fonts": "font/*"
     }
   }
 }
