@@ -4,10 +4,12 @@
   "dependencies": {
     "jquery": null,
     "bootstrap": null,
+    "bootswatch": null,
     "backbone": null,
     "underscore": null,
     "requirejs": null,
-    "marked": "~0.2.9"
+    "marked": "~0.2.9",
+    "prismjs": null
   },
 
   "exportsOverride": {
@@ -27,6 +29,9 @@
       "js": "dist/js/*.js",
       "css": "dist/css/*.css",
       "fonts": "dist/fonts/*"
+    },
+    "bootswatch": {
+      "css": "cyborg/*.css"
     }
   }
 }
