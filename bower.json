@@ -31,7 +31,7 @@
       "fonts": "dist/fonts/*"
     },
     "bootswatch": {
-      "css": "cyborg/*.css"
+      "css": "cosmo/*.css"
     },
     "font-awesome": {
       "css": "css/*.css",
