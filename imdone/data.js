@@ -1,9 +1,16 @@
 {
   "lists": [
     "todo",
+    "planning",
     "doing",
-    "filters",
-    "planning"
+    "done",
+    "archive",
+    "filters"
   ],
-  "hidden": []
+  "hidden": [
+    "archive",
+    "filters",
+    "todo",
+    "done"
+  ]
 }

@@ -31,7 +31,8 @@
       "fonts": "dist/fonts/*"
     },
     "bootswatch": {
-      "css": "cosmo/*.css"
+      "css": "cosmo/*.css",
+      "fonts": "../bootstrap/dist/fonts/*"
     },
     "font-awesome": {
       "css": "css/*.css",
