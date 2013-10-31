@@ -1,5 +1,5 @@
 body {
-  padding-top: 50px;
+  padding-top: 55px;
 }
 .readme {
   padding: 15px 15px;
@@ -16,4 +16,13 @@ body {
 
 .sidebar .nav > .active > a {
   color: #222;
+}
+
+.hero {
+  font-size: 23px;
+  font-weight: 200;
+}
+
+.description {
+  margin-top: 150px;
 }
