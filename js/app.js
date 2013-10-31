@@ -5,7 +5,8 @@ define(["backbone", "jquery"], function(Backbone, $){
         },
 
         render: function(){
-          //$("#toc").toc({content:".readme"});
+          $("#toc").toc();
+          $('body').scrollspy({ target: '.sidebar', offset: 40 });
         }
     });
     return App;

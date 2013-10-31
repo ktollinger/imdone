@@ -8,3 +8,12 @@ body {
 .carousel, .hero-image{
   margin-top: 20px;
 }
+
+.sidebar.affix {
+  position: fixed;
+  top: 80px;
+}
+
+.sidebar .nav > .active > a {
+  color: #222;
+}
