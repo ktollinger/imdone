@@ -16,7 +16,7 @@ module.exports = function(grunt) {
 
     markdown: {
       all: {
-        src: 'readme.md',
+        src: 'project-readme.md', //Where do you want the readme saved
         dest: 'index.html',
         options: {
           template: 'index.html.jst',
@@ -51,10 +51,11 @@ module.exports = function(grunt) {
 
   grunt.registerTask('readme', 'Get readme file', function() {
     grunt.config.requires('markdown.all.options.templateContext.project');
+    grunt.config.requires('markdown.all.src');
     var done = this.async();
     var https = require('https');
     var fs = require('fs');
-    var marked = 
+    var readme = grunt.config('markdown.all.src');
     https.get("https://api.github.com/repos/" + 
               grunt.config("markdown.all.options.templateContext.project") + 
               "/readme", function(res) {
@@ -66,12 +67,12 @@ module.exports = function(grunt) {
 
       res.on('end',function(){
           var obj = JSON.parse(data);
-          var md = new Buffer(obj.content, 'base64').toString('ascii')
-          fs.writeFile('readme.md', md, function (err) {
+          var md = new Buffer(obj.content, 'base64').toString('ascii');
+          fs.writeFile(readme, md, function (err) {
             if (err) {
               done(err);
             }
-            grunt.log.writeln('saved readme.md');
+            grunt.log.writeln('saved project README to ' + readme);
             done(true);
           });
       });
