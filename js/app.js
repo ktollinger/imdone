@@ -5,6 +5,7 @@ define(["backbone", "jquery"], function(Backbone, $){
         },
 
         render: function(){
+          //$("#toc").toc({content:".readme"});
         }
     });
     return App;

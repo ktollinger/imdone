@@ -8,6 +8,7 @@ require.config({
     "backbone"   : "backbone/js/backbone-min",
     "marked"     : "marked/js/marked",
     "prism"      : "prismjs/js/prism",
+    "jquery.toc" : "jquery.toc/jquery.toc",
     "app"        : "../js/app"
   },
   shim: {
@@ -15,12 +16,13 @@ require.config({
     "backbone"  : {
                     deps    : ["jquery", "underscore"],
                     exports : "Backbone"
-                  }
+                  },
+    "jquery.toc" : ["jquery"]
   },
   waitSeconds: 10
 });
 
-require(['jquery', 'underscore', 'backbone', 'bootstrap', 'app', 'prism'], function(jquery, _, Backbone, Bootstrap, App){
+require(['jquery', 'underscore', 'backbone', 'bootstrap', 'app', 'prism', 'jquery.toc'], function(jquery, _, Backbone, Bootstrap, App){
     Prism.highlightAll();
     new App;
 });

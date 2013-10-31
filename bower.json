@@ -9,21 +9,27 @@
     "underscore": null,
     "requirejs": null,
     "marked": "~0.2.9",
-    "prismjs": null
+    "prismjs": null,
+    "jquery.toc": "~0.3.5"
   },
-
   "exportsOverride": {
     "requirejs": {
       "js": "require.js"
     },
     "underscore": {
-      "js": ["underscore-min.js", "underscore-min.map"]
+      "js": [
+        "underscore-min.js",
+        "underscore-min.map"
+      ]
     },
     "marked": {
       "js": "lib/marked.js"
     },
     "backbone": {
-      "js": ["backbone-min.js","backbone-min.map"]
+      "js": [
+        "backbone-min.js",
+        "backbone-min.map"
+      ]
     },
     "bootstrap": {
       "js": "dist/js/*.js",
