@@ -28,7 +28,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-3">
-          <div class="hidden-print affix sidebar" role="complementary">
+          <div class="hidden-print hidden-sm affix sidebar" role="complementary">
             <ul id="toc" class="nav nav-list"></ul>
           </div>
         </div>
@@ -119,31 +119,45 @@
 <a href="https://npmjs.org/package/imdone"><img src="https://badge.fury.io/js/imdone.png" alt="NPM version"></a>
 <a href="http://flattr.com/thing/1286067/iMDone"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this"></a></p>
 <h2>Introduction</h2>
-<p>When working on a software project or markdown for a blog or wiki, there are always tasks you need to record.  Most people use a separate tool to record tasks and sort them into lists.  That&#39;s where iMDone comes in.  Tasks are just markdown links!</p>
-<p><strong>Put a task at the top of a list called &quot;todo&quot;</strong>  </p>
-<pre><code>[this is a task](#todo:0)
-[this is another task](#todo:10)</code></pre>
-<p><strong>In javascript code</strong>  </p>
-<pre><code class="lang-javascript">//[this is a task in javascript code](#todo:0)</code></pre>
-<p><strong>Put a task on the bottom of a list called &quot;doing&quot; (giving it a sort value of 1000 will put it at the bottom unless you have tons of tasks in the list)</strong>  </p>
-<pre><code>[this is a task in doing](#doing:30)</code></pre>
-<p><strong>Tasks are sorted by the number after the <code>:</code></strong></p>
-<p><strong>You can filter by path using the filter box in the top right corner, or by embedding a filter link in a task like this:</strong>  </p>
-<pre><code>[Filter by [src/main/java](#filter/src/main/java)](#filters:0)</code></pre>
-<p>This would create a filters list containing this task and a link that will populate the filter box with <em>src/main/java</em></p>
-<h2>Prerequisites </h2>
+<p>When working on a software project in code or writing project in markdown, there are always tasks you need to record.
+Most people use a separate tool to record tasks and sort them into lists.
+That&#39;s where iMDone comes in.  Tasks are just markdown links!</p>
+<h2>Features</h2>
 <ul>
-<li><a href="http://nodejs.org/">nodejs</a> is <a href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager">installed</a></li>
-<li><a href="https://npmjs.org/">npm</a> is <a href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager">installed</a></li>
+<li>Create tasks in any text file using markdown link syntax</li>
+<li>Sort tasks and move them between lists using drag and drop</li>
+<li>Reorder lists</li>
+<li>Hide and show lists</li>
+<li>Task filters</li>
+<li>Search</li>
+<li>Create, delete and edit files</li>
+<li>Markdown preview with table of contents</li>
+<li>Syntax highlighting in markdown code blocks</li>
 </ul>
-<h2>Install</h2>
-<pre><code>npm install -g imdone</code></pre>
-<h2>Run</h2>
+<h2>Quickstart</h2>
+<p>iMDone is written in javascript and runs on <a href="http://nodejs.org/">nodejs</a>.  You&#39;ll need to install nodejs to use iMDone</p>
 <ul>
-<li>open a terminal window and navigate to your local project directory and run...<pre><code>imdone -o</code></pre>
+<li>Install<pre><code>npm install -g imdone</code></pre>
+</li>
+<li>Run iMDone by opening a terminal window, navigate to your local project directory and run...<pre><code>imdone -o</code></pre>
 </li>
 <li>or for help...<pre><code>imdone -h</code></pre>
 </li>
+<li>Open a file by clicking on the folder icon and create a task like this<pre><code>[Use imdone to manage tasks in my project](#doing:0)</code></pre>
+</li>
+</ul>
+<h2>Tips</h2>
+<ul>
+<li><strong>Tasks are sorted by the number after the colon</strong></li>
+<li><strong>Put a task at the top of a list called &quot;todo&quot;</strong>  <pre><code>[this is a task](#todo:0)
+[this is another task](#todo:10)</code></pre>
+</li>
+<li><strong>In javascript code</strong>  <pre><code class="lang-javascript">//[this is a todo task in javascript code](#todo:0)</code></pre>
+</li>
+<li><strong>Put a task at the bottom of a list called &quot;doing&quot;</strong><pre><code>[this is a task in doing](#doing:1000)</code></pre>
+</li>
+<li><strong>Embed a filter link in a task like this:</strong>  <pre><code>[Filter by [src/main/java](#filter/src/main/java)](#filters:0)</code></pre>
+This would create a filters list containing this task and a link that will populate the filter box with <em>src/main/java</em></li>
 </ul>
 <h2>Common Errors</h2>
 <ul>
