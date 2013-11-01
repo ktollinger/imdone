@@ -118,39 +118,19 @@
               <p><a href="https://gemnasium.com/piascikj/imdone"><img src="https://gemnasium.com/piascikj/imdone.png" alt="Dependency Status"></a>
 <a href="https://npmjs.org/package/imdone"><img src="https://badge.fury.io/js/imdone.png" alt="NPM version"></a>
 <a href="http://flattr.com/thing/1286067/iMDone"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this"></a></p>
-<h2>Keep your tasks in your work!!!</h2>
-<p>A simple scrum board and markdown wiki for geeks.  No DB needed!  Your tasks are in your source code, so you can share your board on <a href="http://www.github.com">github</a>.</p>
-<h3>Tasks are just markdown links!!!</h3>
+<h2>Introduction</h2>
+<p>When working on a software project or markdown for a blog or wiki, there are always tasks you need to record.  Most people use a separate tool to record tasks and sort them into lists.  That&#39;s where iMDone comes in.  Tasks are just markdown links!</p>
 <p><strong>Put a task at the top of a list called &quot;todo&quot;</strong>  </p>
 <pre><code>[this is a task](#todo:0)
 [this is another task](#todo:10)</code></pre>
 <p><strong>In javascript code</strong>  </p>
 <pre><code class="lang-javascript">//[this is a task in javascript code](#todo:0)</code></pre>
 <p><strong>Put a task on the bottom of a list called &quot;doing&quot; (giving it a sort value of 1000 will put it at the bottom unless you have tons of tasks in the list)</strong>  </p>
-<pre><code>[this is a task in doing](#doing:40)</code></pre>
+<pre><code>[this is a task in doing](#doing:30)</code></pre>
 <p><strong>Tasks are sorted by the number after the <code>:</code></strong></p>
-<h3>Filter by path</h3>
-<p>You can filter by path using the filter box in the top right corner, or by embedding a filter link in a task like this:  </p>
+<p><strong>You can filter by path using the filter box in the top right corner, or by embedding a filter link in a task like this:</strong>  </p>
 <pre><code>[Filter by [src/main/java](#filter/src/main/java)](#filters:0)</code></pre>
 <p>This would create a filters list containing this task and a link that will populate the filter box with <em>src/main/java</em></p>
-<h2>Search and more!</h2>
-<ul>
-<li><strong>Edit and create files directly in iMDone using the <a href="http://ace.ajax.org">Ace editor</a>!</strong></li>
-<li><strong>Stay focused on your current task!  It&#39;s always there in the bottom right corner.</strong></li>
-<li><strong>Create files by just linking to them in markdown files</strong></li>
-<li><strong>Preview markdown files and print them as markdown or html!</strong></li>
-<li><strong>Hide and show lists</strong></li>
-<li><strong>Delete files</strong></li>
-<li><strong>Search with highlighted results</strong></li>
-</ul>
-<h2>Keyboard shortcuts</h2>
-<pre><code>Shift+Ctrl+s    Save file
-Shift+Ctrl+x    Remove file
-esc             File View - exit editor/preview
-                List View - clear filter
-i               When in preview, edit file
-Shift+Ctrl+f    Open project search dialog
-Ctrl+f          When in edit mode, search current file</code></pre>
 <h2>Prerequisites </h2>
 <ul>
 <li><a href="http://nodejs.org/">nodejs</a> is <a href="https://github.com/joyent/node/wiki/Installing-Node.js-via-package-manager">installed</a></li>
@@ -160,34 +140,14 @@ Ctrl+f          When in edit mode, search current file</code></pre>
 <pre><code>npm install -g imdone</code></pre>
 <h2>Run</h2>
 <ul>
-<li>open a terminal window and navigate to your local project directory and run:  </li>
+<li>open a terminal window and navigate to your local project directory and run...<pre><code>imdone -o</code></pre>
+</li>
+<li>or for help...<pre><code>imdone -h</code></pre>
+</li>
 </ul>
-<pre><code>imdone -o</code></pre>
-<ul>
-<li>Here&#39;s the help output</li>
-</ul>
-<pre><code>Usage: imdone [options]
-
-Options:
-
-  -h, --help                output usage information
-  -V, --version             output the version number
-  -o, --open                Open imdone in the default browser
-  -s, --stop                Stop imdone server
-  -d, --dirs &lt;directories&gt;  A comma separated list of project directories
-
-Examples:
-
-  Open imdone in a browser with the current working directory as the project root
-
-  $ imdone -o
-
-  Open imdone in a browser with list of project directories
-
-  $ imdone -o -d projects/imdone,projects/myproject</code></pre>
 <h2>Common Errors</h2>
 <ul>
-<li>If you are using bower in your project be sure to exclude the directory defined in your .bowerrc file, otherwise you&#39;ll end up with too many open files errors.</li>
+<li>If you are using bower in your project be sure to exclude the directory defined in your .bowerrc file (usually bower_components), otherwise you&#39;ll end up with too many open files errors.</li>
 </ul>
 <h2>How you can help</h2>
 <p>If you like iMDone and want to help me make it better, you can make a contribution at pledgie.  Every donation is very much appreciated.  </p>
@@ -203,9 +163,8 @@ Examples:
 <li>Help with missing documentation</li>
 </ul>
 <h2>See it in action!</h2>
-<p>Fork this repository and run imdone in your local copy.  I use imdone for keep track of imdone development.</p>
+<p>Fork this repository and run imdone in your local copy.  I use imdone for keeping track of imdone development.</p>
 <p><strong>imdone will create a directory named imdone that will contain your custom configuration and a file to keep your lists in order</strong><br>- you should keep the imdone directory in source control  </p>
-<p><strong>Filter by file name</strong><br>- You can filter by the file name the task are in.<br>- As you type in the &quot;filter by file name&quot; field, tasks are filtered</p>
 <h2>Configuration</h2>
 <p>After running imdone for the first time, modify imdone/imdone.js in your project directory.  The default config looks like this.  Your imdone.js will extend this.</p>
 <pre><code class="lang-javascript">    module.exports = {
@@ -221,71 +180,6 @@ Examples:
 <ul>
 <li>iMDone has been tested on my Ubuntu 12.04 desktop using chrome 23.0.x and Firefox 19.x.  It should work on any machine that has nodejs and npm installed and for auto update of boards, a browser that supports websockets.</li>
 <li>We us <a href="http://pivotal.github.io/jasmine/">jasmine</a> and <a href="https://github.com/mhevery/jasmine-node">mhevery/jasmine-node</a> for testing.</li>
-</ul>
-<h2>Roadmap</h2>
-<ul>
-<li><a href="#planning:180">Enable svn and git commit after file changes</a></li>
-<li><a href="#planning:250">Convert front end to use backbone.js</a></li>
-<li><a href="#todo:130">respect marked configuration in client javascript</a></li>
-<li><a href="#planning:100">User should be able to remove task syntax with hotkey when in task text</a></li>
-<li><a href="#planning:80">User should be able to use TOC in preview mode for md files</a></li>
-<li><a href="#planning:190">User should be able to quickly add a date and assigned to tasks using @&lt;user&gt; @&lt;date&gt;</a></li>
-<li><a href="#planning:260">User should be able to get quick help with keyboard shortcuts</a></li>
-<li><a href="#todo:120">User should get a guided tour</a></li>
-<li><a href="#planning:30">Enable vfs <a href="https://github.com/c9/vfs-socket">https://github.com/c9/vfs-socket</a> as method of interacting with other storage providers.</a></li>
-<li><a href="#planning:0">Use <a href="https://npmjs.org/package/broadway">Broadway</a> for IOC.</a></li>
-</ul>
-<h2>Future Design CRC</h2>
-<h3>Repository</h3>
-<h4>Responsibilities</h4>
-<ul>
-<li>Save and load source files</li>
-<li>Handle authentication for accessing files</li>
-<li>Handle text search</li>
-</ul>
-<h4>Collaborators</h4>
-<ul>
-<li>Project</li>
-</ul>
-<h3>RepositoryFactory</h3>
-<h4>Responsibilities</h4>
-<ul>
-<li>Return a repository object capable of storing and retrieving files</li>
-</ul>
-<h4>Collaborators</h4>
-<ul>
-<li>Repository</li>
-</ul>
-<h3>Project</h3>
-<h4>Responsibilities</h4>
-<ul>
-<li>Container for information<ul>
-<li>User(s)</li>
-<li>Role(s)</li>
-<li>Repositories</li>
-</ul>
-</li>
-</ul>
-<h3>User</h3>
-<h4>Responsibilities</h4>
-<ul>
-<li>Container for information<ul>
-<li>Projects</li>
-</ul>
-</li>
-</ul>
-<h3>SearchFacade</h3>
-<h4>Responsibilities</h4>
-<ul>
-<li>Run a text search in a given repository</li>
-<li>Ask the RepositoryFactory for a Repository</li>
-<li>If there are multiple Repositories for a project delegate to each for searhing</li>
-</ul>
-<h4>Collaborators</h4>
-<ul>
-<li>RepositoryFactory</li>
-<li>Repository</li>
-<li>Project</li>
 </ul>
 
 <!--/README -->

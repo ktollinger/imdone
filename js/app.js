@@ -5,7 +5,9 @@ define(["backbone", "jquery"], function(Backbone, $){
         },
 
         render: function(){
-          $("#toc").toc();
+          $("#toc").toc({
+            'highlightOffset': "100px", //offset to trigger the next headline
+          });
           $('body').scrollspy({ target: '.sidebar'});
         }
     });
