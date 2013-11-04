@@ -146,23 +146,40 @@ That&#39;s where iMDone comes in.  Tasks are just markdown links!</p>
 <li>Open a file by clicking on the folder icon and create a task like this<pre><code>[Use imdone to manage tasks in my project](#doing:0)</code></pre>
 </li>
 </ul>
+<h2>Configuration</h2>
+<p>After running imdone for the first time, modify imdone/imdone.js in your project directory.  The default config looks like this.  Your imdone.js will extend this.</p>
+<pre><code class="lang-javascript">    module.exports = {
+        include:/^.*$/,
+        exclude:/^(node_modules|imdone|target)\/|\.(git|svn)\/|\~$|\.(jpg|png|gif|swp)$/,
+        marked : {
+            gfm: true,
+            pedantic: false,
+            sanitize: true
+        }
+    };</code></pre>
 <h2>Tips</h2>
 <ul>
 <li><strong>Tasks are sorted by the number after the colon</strong></li>
-<li><strong>Put a task at the top of a list called &quot;todo&quot;</strong>  <pre><code>[this is a task](#todo:0)
-[this is another task](#todo:10)</code></pre>
+<li><strong>Keep tasks in code by including them in comments</strong>  <pre><code class="lang-javascript">//[this is a todo task in javascript code](#todo:0)</code></pre>
 </li>
-<li><strong>In javascript code</strong>  <pre><code class="lang-javascript">//[this is a todo task in javascript code](#todo:0)</code></pre>
-</li>
-<li><strong>Put a task at the bottom of a list called &quot;doing&quot;</strong><pre><code>[this is a task in doing](#doing:1000)</code></pre>
-</li>
-<li><strong>Embed a filter link in a task like this:</strong>  <pre><code>[Filter by [src/main/java](#filter/src/main/java)](#filters:0)</code></pre>
+<li><strong>Embed a filter link in a task for common filters</strong>  <pre><code>[Filter by [src/main/java](#filter/src/main/java)](#filters:0)</code></pre>
 This would create a filters list containing this task and a link that will populate the filter box with <em>src/main/java</em></li>
+<li><strong>Keep the imdone folder in source control!</strong></li>
+<li><strong>If tracking a large number of files, increase the &quot;watch handle limit&quot; to 512k</strong><ul>
+<li>As root edit /etc/sysctl.conf, add the following line<pre><code>fs.inotify.max_user_watches = 524288</code></pre>
+</li>
+<li>Apply the change<pre><code>sudo sysctl -p</code></pre>
+</li>
+</ul>
+</li>
 </ul>
 <h2>Common Errors</h2>
 <ul>
 <li>If you are using bower in your project be sure to exclude the directory defined in your .bowerrc file (usually bower_components), otherwise you&#39;ll end up with too many open files errors.</li>
 </ul>
+<h2>See it in action!</h2>
+<p>Fork this repository and run imdone in your local copy.  I use imdone for keeping track of imdone development.</p>
+<p><strong>imdone will create a directory named imdone that will contain your custom configuration and a file to keep your lists in order</strong><br>- you should keep the imdone directory in source control  </p>
 <h2>How you can help</h2>
 <p>If you like iMDone and want to help me make it better, you can make a contribution at pledgie.  Every donation is very much appreciated.  </p>
 <p><a href='http://www.pledgie.com/campaigns/19536'><img alt='Click here to lend your support to: iMDone - TODO, doing, done! and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/19536.png?skin_name=chrome' border='0' /></a></p>
@@ -176,20 +193,6 @@ This would create a filters list containing this task and a link that will popul
 <li>Publish an article on your blog (send the link) to educate others regarding some aspect of the project</li>
 <li>Help with missing documentation</li>
 </ul>
-<h2>See it in action!</h2>
-<p>Fork this repository and run imdone in your local copy.  I use imdone for keeping track of imdone development.</p>
-<p><strong>imdone will create a directory named imdone that will contain your custom configuration and a file to keep your lists in order</strong><br>- you should keep the imdone directory in source control  </p>
-<h2>Configuration</h2>
-<p>After running imdone for the first time, modify imdone/imdone.js in your project directory.  The default config looks like this.  Your imdone.js will extend this.</p>
-<pre><code class="lang-javascript">    module.exports = {
-        include:/^.*$/,
-        exclude:/^(node_modules|imdone|target)\/|\.(git|svn)\/|\~$|\.(jpg|png|gif|swp)$/,
-        marked : {
-            gfm: true,
-            pedantic: false,
-            sanitize: true
-        }
-    };</code></pre>
 <h2>Testing</h2>
 <ul>
 <li>iMDone has been tested on my Ubuntu 12.04 desktop using chrome 23.0.x and Firefox 19.x.  It should work on any machine that has nodejs and npm installed and for auto update of boards, a browser that supports websockets.</li>
