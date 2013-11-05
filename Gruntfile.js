@@ -29,13 +29,14 @@ module.exports = function(grunt) {
             }
             // [Include project data from [github](https://api.github.com/repos/piascikj/imdone)](#doing:0)
             // [Include project data from [npm](http://isaacs.iriscouch.com/registry/_design/app)](#doing:0)
-            // [NPM project data <http://isaacs.iriscouch.com/registry/imdone>](#doing:0)
+            // [NPM project data <http://registry.npmjs.org/imdone>](#doing:0)
           },
           postCompile: function(src, context) {},
           templateContext: {
             title: "iMDone",
             hero: "hero.html",
-            project: "piascikj/imdone"
+            project: "piascikj/imdone",
+            ga: 'UA-37731114-1'
           },
           markdownOptions: {
             gfm: true
