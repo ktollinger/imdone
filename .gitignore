@@ -1,6 +1,5 @@
 node_modules
 dist
 .tmp
-libs/*
 bower_components/*
 build
