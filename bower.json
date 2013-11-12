@@ -4,6 +4,7 @@
   "dependencies": {
     "jquery": null,
     "bootstrap": null,
+    "font-awesome": "~3.2.0",
     "bootswatch": null,
     "backbone": null,
     "underscore": null,
