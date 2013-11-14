@@ -3,7 +3,7 @@
   <head>
     <title>iMDone</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="/favicon.ico" /> 
+    <link rel="shortcut icon" href="favicon.ico" /> 
     <!-- Bootstrap -->
     <link href="css/main.css" rel="stylesheet">
     <link href="lib/prismjs/css/prism-okaidia.css" rel="stylesheet" media="screen">
@@ -136,6 +136,7 @@ That&#39;s where iMDone comes in.  Tasks are just markdown links!</p>
 <li>Create, delete and edit files</li>
 <li>Markdown preview with table of contents</li>
 <li>Syntax highlighting in markdown code blocks </li>
+<li><a href="https://github.com/gollum/gollum/wiki#page-links">Use gollum link syntax</a> - Great for managing github wikis</li>
 </ul>
 <h2>Quickstart</h2>
 <p>iMDone is written in javascript and runs on <a href="http://nodejs.org/">nodejs</a>.  You&#39;ll need to install nodejs to use iMDone</p>
@@ -161,19 +162,24 @@ That&#39;s where iMDone comes in.  Tasks are just markdown links!</p>
         }
     };</code></pre>
 <h2>Tips</h2>
+<h3>Tasks are sorted by the number after the colon</h3>
+<h3>Keep tasks in code</h3>
+<pre><code class="lang-javascript">//[this is a todo task in javascript code](#todo:0)</code></pre>
+<h3>Embed a filter link in a task</h3>
+<pre><code>[Filter by [src/main/java](#filter/src/main/java)](#filters:0)</code></pre>
+<p>This would create a filters list containing this task and a link that will populate the filter box with <em>src/main/java</em></p>
+<h3>Keep the imdone folder in source control!</h3>
+<h3>If tracking a large number of files</h3>
 <ul>
-<li><strong>Tasks are sorted by the number after the colon</strong></li>
-<li><strong>Keep tasks in code by including them in comments</strong>  <pre><code class="lang-javascript">//[this is a todo task in javascript code](#todo:0)</code></pre>
-</li>
-<li><strong>Embed a filter link in a task for common filters</strong>  <pre><code>[Filter by [src/main/java](#filter/src/main/java)](#filters:0)</code></pre>
-This would create a filters list containing this task and a link that will populate the filter box with <em>src/main/java</em></li>
-<li><strong>Keep the imdone folder in source control!</strong></li>
-<li><strong>If tracking a large number of files, increase the &quot;watch handle limit&quot; to 512k</strong><ul>
+<li>Increase the &quot;watch handle limit&quot; to 512k**</li>
 <li>As root edit /etc/sysctl.conf, add the following line<pre><code>fs.inotify.max_user_watches = 524288</code></pre>
 </li>
 <li>Apply the change<pre><code>sudo sysctl -p</code></pre>
 </li>
 </ul>
+<h3>Checkout a github wiki to manage with imdone</h3>
+<ul>
+<li>If the github clone url is <a href="https://github.com/piascikj/imdone.git">https://github.com/piascikj/imdone.git</a> then<pre><code>git clone https://github.com/piascikj/imdone.wiki.git</code></pre>
 </li>
 </ul>
 <h2>Common Errors</h2>

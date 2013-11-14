@@ -5,7 +5,7 @@ define(["backbone", "jquery"], function(Backbone, $){
         },
 
         render: function(){
-          $("#toc").toc();
+          $("#toc").toc({headings: "h1,h2"});
           $('body').scrollspy({ target: '.sidebar'});
         }
     });
