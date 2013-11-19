@@ -137,6 +137,7 @@ That&#39;s where iMDone comes in.  Tasks are just markdown links!</p>
 <li>Markdown preview with table of contents</li>
 <li>Syntax highlighting in markdown code blocks </li>
 <li><a href="https://github.com/gollum/gollum/wiki#page-links">Use gollum link syntax</a> - Great for managing github wikis</li>
+<li>Execute an event listener for modified files</li>
 </ul>
 <h2>Quickstart</h2>
 <p>iMDone is written in javascript and runs on <a href="http://nodejs.org/">nodejs</a>.  You&#39;ll need to install nodejs to use iMDone</p>
@@ -152,15 +153,21 @@ That&#39;s where iMDone comes in.  Tasks are just markdown links!</p>
 </ul>
 <h2>Configuration</h2>
 <p>After running imdone for the first time, modify imdone/imdone.js in your project directory.  The default config looks like this.  Your imdone.js will extend this.</p>
-<pre><code class="lang-javascript">    module.exports = {
-        include:/^.*$/,
-        exclude:/^(node_modules|imdone|target)\/|\.(git|svn)\/|\~$|\.(jpg|png|gif|swp)$/,
-        marked : {
-            gfm: true,
-            pedantic: false,
-            sanitize: true
-        }
-    };</code></pre>
+<pre><code class="lang-javascript">module.exports = {
+  include:/^.*$/,
+  exclude:/^(node_modules|bower_components|imdone|target|build)\/|\.(git|svn)|\~$|\.(jpg|png|gif|swp|ttf|otf)$/,
+  marked : {
+    gfm: true,
+    pedantic: false,
+    sanitize: true
+  },
+  events : {
+    modified: function(params) {
+      console.log(&quot;Files modified in project:&quot;, params.project.path);
+      console.log(params.files);
+    }
+  }
+};</code></pre>
 <h2>Tips</h2>
 <h3>Tasks are sorted by the number after the colon</h3>
 <h3>Keep tasks in code</h3>
@@ -182,6 +189,73 @@ That&#39;s where iMDone comes in.  Tasks are just markdown links!</p>
 <li>If the github clone url is <a href="https://github.com/piascikj/imdone.git">https://github.com/piascikj/imdone.git</a> then<pre><code>git clone https://github.com/piascikj/imdone.wiki.git</code></pre>
 </li>
 </ul>
+<h3>Configuration for running git add and commit after files are modified</h3>
+<pre><code class="lang-javascript">var exec = require(&#39;child_process&#39;).exec;
+var util = require(&#39;util&#39;);
+
+/*
+ * imdone
+ * https://github.com/piascikj/imdone
+ *
+ * Copyright (c) 2012 Jesse Piascik
+ * Licensed under the MIT license.
+ */
+module.exports = {
+  include:/^.*$/,
+  exclude:/^(node_modules|bower_components|imdone|target|build)\/|\.(git|svn)|\~$|\.(jpg|png|gif|swp|ttf|otf)$/,
+  marked : {
+    gfm: true,
+    pedantic: false,
+    sanitize: true
+  },
+  events : {
+    modified: function(params) {
+      console.log(&quot;Files modified in project:&quot;, params.project.path);
+      var statusCmd = util.format(&#39;cd %s &amp; git status -s&#39;, params.project.path);
+      var addCmd = util.format(&#39;cd %s &amp; git add -A&#39;, params.project.path);
+      var commitCmd = util.format(&#39;cd %s &amp; git commit -a -m &quot;Update to notes from imdone&quot;&#39;, params.project.path);
+
+      console.log(&quot;---Running &quot;, statusCmd);
+      exec(statusCmd, function(err, stdout, stderr) {
+        if (err || stderr) {
+          console.log(&quot;Error executing &quot;, statusCmd);
+          console.log(&quot;err:&quot;, err);
+          console.log(&quot;stderr:&quot;, stderr);
+          return;
+        }
+
+        if (/^\s*(\?|M|A|D|R|C|U)/g.test(stdout)) {
+          console.log(&quot;Found changes to commit!&quot;);
+          console.log(stdout);
+          console.log(&quot;---Running &quot;, addCmd);
+          exec(addCmd, function(err, stdout, stderr) {
+            if (err || stderr) {
+              console.log(&quot;Error executing &quot;, addCmd);
+              console.log(&quot;err:&quot;, err);
+              console.log(&quot;stderr:&quot;, stderr);
+              return;
+            }
+            console.log(&quot;stdout:&quot;, stdout);
+
+            console.log(&quot;---Running &quot;, commitCmd);
+            exec(commitCmd, function(err, stdout, stderr) {
+              if (err || stderr) {
+                console.log(&quot;Error executing &quot;, commitCmd);
+                console.log(&quot;err:&quot;, err);
+                console.log(&quot;stderr:&quot;, stderr);
+                return;
+              }
+              console.log(&quot;stdout:&quot;, stdout);
+            });
+          });
+        } else {
+          console.log(&quot;No changes detected.&quot;);
+        }
+      });
+
+    }
+  }
+};</code></pre>
 <h2>Common Errors</h2>
 <ul>
 <li>If you are using bower in your project be sure to exclude the directory defined in your .bowerrc file (usually bower_components), otherwise you&#39;ll end up with too many open files errors.</li>
