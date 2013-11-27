@@ -1,9 +1,9 @@
+[![Build Status](https://travis-ci.org/piascikj/imdone.png?branch=master)](https://travis-ci.org/piascikj/imdone)
 [![Dependency Status](https://gemnasium.com/piascikj/imdone.png)](https://gemnasium.com/piascikj/imdone)
 [![NPM version](https://badge.fury.io/js/imdone.png)](https://npmjs.org/package/imdone)
 [![Flattr this](http://api.flattr.com/button/flattr-badge-large.png)](http://flattr.com/thing/1286067/iMDone)
 
 [![NPM](https://nodei.co/npm/imdone.png?downloads=true&stars=true)](https://nodei.co/npm/imdone/)
-[![NPM](https://nodei.co/npm-dl/imdone.png?months=3)](https://nodei.co/npm-dl/imdone/)
 
 Introduction
 ----
@@ -202,3 +202,4 @@ Testing
 - iMDone has been tested on my Ubuntu 12.04 desktop using chrome 23.0.x and Firefox 19.x.  It should work on any machine that has nodejs and npm installed and for auto update of boards, a browser that supports websockets.
 - We us [jasmine](http://pivotal.github.io/jasmine/) and [mhevery/jasmine-node](https://github.com/mhevery/jasmine-node) for testing.
 
+[![NPM](https://nodei.co/npm-dl/imdone.png?months=3)](https://nodei.co/npm-dl/imdone/)

@@ -58,9 +58,10 @@ module.exports = function(grunt) {
     var https = require('https');
     var fs = require('fs');
     var readme = grunt.config('markdown.all.src');
-    https.get("https://api.github.com/repos/" + 
-              grunt.config("markdown.all.options.templateContext.project") + 
-              "/readme", function(res) {
+    https.get({ host:"api.github.com",
+                path: "/repos/" + grunt.config("markdown.all.options.templateContext.project") + "/readme",
+                headers: {'User-Agent':'imdone-site'}
+              }, function(res) {
       var data = '';
 
       res.on('data', function (chunk){
