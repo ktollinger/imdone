@@ -122,7 +122,8 @@
 <a href="https://gemnasium.com/piascikj/imdone"><img src="https://gemnasium.com/piascikj/imdone.png" alt="Dependency Status"></a>
 <a href="https://npmjs.org/package/imdone"><img src="https://badge.fury.io/js/imdone.png" alt="NPM version"></a>
 <a href="http://flattr.com/thing/1286067/iMDone"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this"></a></p>
-<p><a href="https://nodei.co/npm/imdone/"><img src="https://nodei.co/npm/imdone.png?downloads=true&amp;stars=true" alt="NPM"></a></p>
+<p><a href="https://nodei.co/npm/imdone/"><img src="https://nodei.co/npm/imdone.png?downloads=true&amp;stars=true" alt="NPM"></a>
+<a href="https://www.gittip.com/piascikj/"><img src="https://rawgithub.com/twolfson/gittip-badge/0.1.0/dist/gittip.png" alt="Support via Gittip"></a></p>
 <h2>Introduction</h2>
 <p>When working on a software project in code or writing project in markdown, there are always tasks you need to record.
 Most people use a separate tool to record tasks and sort them into lists.
@@ -142,7 +143,6 @@ That&#39;s where iMDone comes in.  Tasks are just markdown links!</p>
 <li>Execute an event listener for modified files</li>
 </ul>
 <h2>Quickstart</h2>
-<p>iMDone is written in javascript and runs on <a href="http://nodejs.org/">nodejs</a>.  You&#39;ll need to install nodejs to use iMDone</p>
 <ul>
 <li>Install<pre><code>npm install -g imdone</code></pre>
 </li>
@@ -157,7 +157,7 @@ That&#39;s where iMDone comes in.  Tasks are just markdown links!</p>
 <p>After running imdone for the first time, modify imdone/imdone.js in your project directory.  The default config looks like this.  Your imdone.js will extend this.</p>
 <pre><code class="lang-javascript">module.exports = {
   include:/^.*$/,
-  exclude:/^(node_modules|bower_components|imdone|target|build)\/|\.(git|svn)|\~$|\.(jpg|png|gif|swp|ttf|otf)$/,
+  exclude:/^(node_modules|bower_components|imdone|target|build)\/|\.(git|svn|imdone)|\~$|\.(jpg|png|gif|swp|ttf|otf)$/,
   marked : {
     gfm: true,
     pedantic: false,
@@ -170,6 +170,19 @@ That&#39;s where iMDone comes in.  Tasks are just markdown links!</p>
     }
   }
 };</code></pre>
+<h2>How you can help</h2>
+<p>If you like iMDone and want to help me make it better, you can make a contribution at Gittip.  Every donation is very much appreciated.  </p>
+<p><a href="https://www.gittip.com/piascikj/"><img src="https://rawgithub.com/twolfson/gittip-badge/0.1.0/dist/gittip.png" alt="Support via Gittip"></a></p>
+<p>If you have some spare time, then there is no better way to help an open source project than to get involved in one of the following ways.</p>
+<ul>
+<li>Help diagnose and report problems</li>
+<li>Suggest fixes by sending in patches</li>
+<li>Improve the code</li>
+<li>Help with unit and end-to-end testing</li>
+<li>Provide peer support on our forum</li>
+<li>Publish an article on your blog (send the link) to educate others regarding some aspect of the project</li>
+<li>Help with missing documentation</li>
+</ul>
 <h2>Tips</h2>
 <h3>Tasks are sorted by the number after the colon</h3>
 <h3>Keep tasks in code</h3>
@@ -177,7 +190,10 @@ That&#39;s where iMDone comes in.  Tasks are just markdown links!</p>
 <h3>Embed a filter link in a task</h3>
 <pre><code>[Filter by [src/main/java](#filter/src/main/java)](#filters:0)</code></pre>
 <p>This would create a filters list containing this task and a link that will populate the filter box with <em>src/main/java</em></p>
-<h3>Keep the imdone folder in source control!</h3>
+<h3>Keep the .imdone folder in source control!</h3>
+<ul>
+<li>It contains your configuration and list order</li>
+</ul>
 <h3>If tracking a large number of files</h3>
 <ul>
 <li>Increase the &quot;watch handle limit&quot; to 512k**</li>
@@ -204,7 +220,7 @@ var util = require(&#39;util&#39;);
  */
 module.exports = {
   include:/^.*$/,
-  exclude:/^(node_modules|bower_components|imdone|target|build)\/|\.(git|svn)|\~$|\.(jpg|png|gif|swp|ttf|otf)$/,
+  exclude:/^(node_modules|bower_components|imdone|target|build)\/|\.(git|svn|imdone)|\~$|\.(jpg|png|gif|swp|ttf|otf)$/,
   marked : {
     gfm: true,
     pedantic: false,
@@ -264,29 +280,15 @@ module.exports = {
 </ul>
 <h2>See it in action!</h2>
 <p>Fork this repository and run imdone in your local copy.  I use imdone for keeping track of imdone development.</p>
-<p><strong>imdone will create a directory named imdone that will contain your custom configuration and a file to keep your lists in order</strong><br>- you should keep the imdone directory in source control  </p>
-<h2>How you can help</h2>
-<p>If you like iMDone and want to help me make it better, you can make a contribution at pledgie.  Every donation is very much appreciated.  </p>
-<p><a href='http://www.pledgie.com/campaigns/19536'><img alt='Click here to lend your support to: iMDone - TODO, doing, done! and make a donation at www.pledgie.com !' src='http://www.pledgie.com/campaigns/19536.png?skin_name=chrome' border='0' /></a></p>
-<p>If you have some spare time, then there is no better way to help an open source project than to get involved in one of the following ways.</p>
-<ul>
-<li>Help diagnose and report problems</li>
-<li>Suggest fixes by sending in patches</li>
-<li>Improve the code</li>
-<li>Help with unit and end-to-end testing</li>
-<li>Provide peer support on our forum</li>
-<li>Publish an article on your blog (send the link) to educate others regarding some aspect of the project</li>
-<li>Help with missing documentation</li>
-</ul>
 <h2>Testing</h2>
 <ul>
-<li>iMDone has been tested on my Ubuntu 12.04 desktop using chrome 23.0.x and Firefox 19.x.  It should work on any machine that has nodejs and npm installed and for auto update of boards, a browser that supports websockets.</li>
-<li>We us <a href="http://pivotal.github.io/jasmine/">jasmine</a> and <a href="https://github.com/mhevery/jasmine-node">mhevery/jasmine-node</a> for testing.</li>
+<li>I use iMDone every day on Ubuntu 13.04 and the latest version of chrome.  It should work on any machine that has nodejs and npm installed and for auto update of boards, a browser that supports websockets.</li>
+<li>I us <a href="http://pivotal.github.io/jasmine/">jasmine</a> and <a href="https://github.com/mhevery/jasmine-node">mhevery/jasmine-node</a> for testing.</li>
 </ul>
-<p><a href="https://nodei.co/npm-dl/imdone/"><img src="https://nodei.co/npm-dl/imdone.png?months=3" alt="NPM"></a></p>
 
 <!--/README -->
-<!-- [Add a discussion board](#doing:0) -->
+<!-- [Add a discussion board](#doing:70) -->
+<!-- [Add history.md](#doing:0) -->
             </div>
           </div>
         </div>
