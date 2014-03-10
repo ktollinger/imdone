@@ -1,10 +1,9 @@
 [![Build Status](https://travis-ci.org/piascikj/imdone.png?branch=master)](https://travis-ci.org/piascikj/imdone)
 [![Dependency Status](https://gemnasium.com/piascikj/imdone.png)](https://gemnasium.com/piascikj/imdone)
-[![NPM version](https://badge.fury.io/js/imdone.png)](https://npmjs.org/package/imdone)
-[![Flattr this](http://api.flattr.com/button/flattr-badge-large.png)](http://flattr.com/thing/1286067/iMDone)
+[![Gittip donate button](http://img.shields.io/gittip/piascikj.png)](https://www.gittip.com/piascikj/ "Donate weekly to this project using Gittip")
+[![Flattr donate button](http://img.shields.io/flattr/donate.png?color=yellow)](http://flattr.com/thing/1286067/iMDone "Donate monthly to this project using Flattr")
 
-[![NPM](https://nodei.co/npm/imdone.png?downloads=true&stars=true)](https://nodei.co/npm/imdone/)
-[![Support via Gittip](https://rawgithub.com/twolfson/gittip-badge/0.1.0/dist/gittip.png)](https://www.gittip.com/piascikj/)
+[![NPM](https://nodei.co/npm/imdone.png)](https://nodei.co/npm/imdone/)
 
 Introduction
 ----
@@ -139,12 +138,12 @@ module.exports = {
   events : {
     modified: function(params) {
       console.log("Files modified in project:", params.project.path);
-      var statusCmd = util.format('cd %s & git status -s', params.project.path);
-      var addCmd = util.format('cd %s & git add -A', params.project.path);
-      var commitCmd = util.format('cd %s & git commit -a -m "Update to notes from imdone"', params.project.path);
-
+      var statusCmd = "git status -s";
+      var addCmd = "git add -A";
+      var commitCmd = 'git commit -a -m "Update to notes from imdone"';
+      var opts = { cwd: params.project.path };
       console.log("---Running ", statusCmd);
-      exec(statusCmd, function(err, stdout, stderr) {
+      exec(statusCmd, opts, function(err, stdout, stderr) {
         if (err || stderr) {
           console.log("Error executing ", statusCmd);
           console.log("err:", err);
@@ -156,7 +155,7 @@ module.exports = {
           console.log("Found changes to commit!");
           console.log(stdout);
           console.log("---Running ", addCmd);
-          exec(addCmd, function(err, stdout, stderr) {
+          exec(addCmd, opts, function(err, stdout, stderr) {
             if (err || stderr) {
               console.log("Error executing ", addCmd);
               console.log("err:", err);
@@ -166,7 +165,7 @@ module.exports = {
             console.log("stdout:", stdout);
 
             console.log("---Running ", commitCmd);
-            exec(commitCmd, function(err, stdout, stderr) {
+            exec(commitCmd, opts, function(err, stdout, stderr) {
               if (err || stderr) {
                 console.log("Error executing ", commitCmd);
                 console.log("err:", err);

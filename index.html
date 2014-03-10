@@ -57,6 +57,7 @@
       <li data-target="#carousel" data-slide-to="4"></li>
       <li data-target="#carousel" data-slide-to="5"></li>
       <li data-target="#carousel" data-slide-to="6"></li>
+      <li data-target="#carousel" data-slide-to="7"></li>
     </ol>
 
     <!-- Wrapper for slides -->
@@ -103,6 +104,12 @@
           Search Results
         </div>
       </div>
+      <div class="item">
+        <img src="images/slide8.png" alt="Search Results">
+        <div class="carousel-caption">
+          Jump to task from Markdown Preview
+        </div>
+      </div>
     </div>
 
     <!-- Controls -->
@@ -121,10 +128,9 @@
   <!-- README -->
                 <p><a href="https://travis-ci.org/piascikj/imdone"><img src="https://travis-ci.org/piascikj/imdone.png?branch=master" alt="Build Status"></a>
 <a href="https://gemnasium.com/piascikj/imdone"><img src="https://gemnasium.com/piascikj/imdone.png" alt="Dependency Status"></a>
-<a href="https://npmjs.org/package/imdone"><img src="https://badge.fury.io/js/imdone.png" alt="NPM version"></a>
-<a href="http://flattr.com/thing/1286067/iMDone"><img src="http://api.flattr.com/button/flattr-badge-large.png" alt="Flattr this"></a></p>
-<p><a href="https://nodei.co/npm/imdone/"><img src="https://nodei.co/npm/imdone.png?downloads=true&amp;stars=true" alt="NPM"></a>
-<a href="https://www.gittip.com/piascikj/"><img src="https://rawgithub.com/twolfson/gittip-badge/0.1.0/dist/gittip.png" alt="Support via Gittip"></a></p>
+<a href="https://www.gittip.com/piascikj/" title="Donate weekly to this project using Gittip"><img src="http://img.shields.io/gittip/piascikj.png" alt="Gittip donate button"></a>
+<a href="http://flattr.com/thing/1286067/iMDone" title="Donate monthly to this project using Flattr"><img src="http://img.shields.io/flattr/donate.png?color=yellow" alt="Flattr donate button"></a></p>
+<p><a href="https://nodei.co/npm/imdone/"><img src="https://nodei.co/npm/imdone.png" alt="NPM"></a></p>
 <h2>Introduction</h2>
 <p>When working on a software project in code or writing project in markdown, there are always tasks you need to record.
 Most people use a separate tool to record tasks and sort them into lists.
@@ -230,12 +236,12 @@ module.exports = {
   events : {
     modified: function(params) {
       console.log(&quot;Files modified in project:&quot;, params.project.path);
-      var statusCmd = util.format(&#39;cd %s &amp; git status -s&#39;, params.project.path);
-      var addCmd = util.format(&#39;cd %s &amp; git add -A&#39;, params.project.path);
-      var commitCmd = util.format(&#39;cd %s &amp; git commit -a -m &quot;Update to notes from imdone&quot;&#39;, params.project.path);
-
+      var statusCmd = &quot;git status -s&quot;;
+      var addCmd = &quot;git add -A&quot;;
+      var commitCmd = &#39;git commit -a -m &quot;Update to notes from imdone&quot;&#39;;
+      var opts = { cwd: params.project.path };
       console.log(&quot;---Running &quot;, statusCmd);
-      exec(statusCmd, function(err, stdout, stderr) {
+      exec(statusCmd, opts, function(err, stdout, stderr) {
         if (err || stderr) {
           console.log(&quot;Error executing &quot;, statusCmd);
           console.log(&quot;err:&quot;, err);
@@ -247,7 +253,7 @@ module.exports = {
           console.log(&quot;Found changes to commit!&quot;);
           console.log(stdout);
           console.log(&quot;---Running &quot;, addCmd);
-          exec(addCmd, function(err, stdout, stderr) {
+          exec(addCmd, opts, function(err, stdout, stderr) {
             if (err || stderr) {
               console.log(&quot;Error executing &quot;, addCmd);
               console.log(&quot;err:&quot;, err);
@@ -257,7 +263,7 @@ module.exports = {
             console.log(&quot;stdout:&quot;, stdout);
 
             console.log(&quot;---Running &quot;, commitCmd);
-            exec(commitCmd, function(err, stdout, stderr) {
+            exec(commitCmd, opts, function(err, stdout, stderr) {
               if (err || stderr) {
                 console.log(&quot;Error executing &quot;, commitCmd);
                 console.log(&quot;err:&quot;, err);
