@@ -1,6 +1,9 @@
-![Logo](https://raw.githubusercontent.com/piascikj/imdone/master/docs/logo.png)  
+![iMDone](https://raw.githubusercontent.com/piascikj/imdone/master/docs/logo.png)  
+----
 
-A task board in your code!
+### A task board in your code!
+
+----
 
 Connect directly to github!
 ----
@@ -22,7 +25,8 @@ That's where iMDone comes in.  Tasks are just markdown links!
 
 Features
 ----
-- Create tasks in any text file using markdown link syntax
+- Now supports code style comments like `// FIXME: this is really broken` in code files
+- Create tasks in any text file using markdown link syntax like `[Finish the latest blog post](doing:0)`
 - Sort tasks and move them between lists using drag and drop
 - Select and move multiple tasks at once
 - Reorder lists
@@ -52,6 +56,10 @@ imdone -h
 - Open a file by clicking on the folder icon and create a task like this
 ```
 [Use imdone to manage tasks in my project](#doing:0)
+```
+- Or create tasks like this in code files (java example)
+```
+// TODO: Use HashMap instead of HashTable
 ```
 - Add another project by navigating to the project directory in the terminal and run...
 ```
@@ -211,3 +219,31 @@ Testing
 ----
 - I use iMDone every day on Ubuntu 13.04 and the latest version of chrome.  It should work on any machine that has nodejs and npm installed and for auto update of boards, a browser that supports websockets.
 - I us [jasmine](http://pivotal.github.io/jasmine/) and [mhevery/jasmine-node](https://github.com/mhevery/jasmine-node) for testing.
+
+Change Log
+----
+### 1.0
+- Fix refresh on file rename, create, or delete
+- Add support for code style tasks
+- Fix browser open for imdone running on another port
+
+### 0.6.6
+- Hide archive and filter buttons when swithing projects
+
+### 0.6.5
+- Add archiving of tasks to existing archive or deleted list or create archive list
+- Add filter by selected tasks filenames
+- Allow regex in filter
+
+### 0.6.4
+- Add batch move tasks
+
+### 0.5.6
+- Add copy button to preview
+
+### 0.5.2
+- Fix valid task check for filetypes without a symbol
+
+### 0.5.1
+- Fix file save if modified and clicking on a search result
+- Fix file route interpretation of preview boolean

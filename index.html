@@ -38,8 +38,9 @@
             <div>
               <div id="readme" class="readme language-javascript">
   <!-- README -->
-                <p><img src="https://raw.githubusercontent.com/piascikj/imdone/master/docs/logo.png" alt="Logo">  </p>
-<p>A task board in your code!</p>
+                <h2><img src="https://raw.githubusercontent.com/piascikj/imdone/master/docs/logo.png" alt="iMDone">  </h2>
+<h3>A task board in your code!</h3>
+<hr>
 <h2>Connect directly to github!</h2>
 <p><img src="https://raw.githubusercontent.com/piascikj/imdone/master/docs/images/imdone-ui.png" alt="iMDone UI"><br>I&#39;ll be releasing an iMDone service that connects directly to your github project.  Sign up for the newsletter <a href="http://signup.imdoneapp.com">here</a>.</p>
 <h2>Introduction</h2>
@@ -53,7 +54,8 @@ That&#39;s where iMDone comes in.  Tasks are just markdown links!</p>
 <p><a href="https://nodei.co/npm/imdone/"><img src="https://nodei.co/npm/imdone.png" alt="NPM"></a></p>
 <h2>Features</h2>
 <ul>
-<li>Create tasks in any text file using markdown link syntax</li>
+<li>Now supports code style comments like <code>// FIXME: this is really broken</code> in code files</li>
+<li>Create tasks in any text file using markdown link syntax like <code>[Finish the latest blog post](doing:0)</code></li>
 <li>Sort tasks and move them between lists using drag and drop</li>
 <li>Select and move multiple tasks at once</li>
 <li>Reorder lists</li>
@@ -75,6 +77,8 @@ That&#39;s where iMDone comes in.  Tasks are just markdown links!</p>
 <li>or for help...<pre><code>imdone -h</code></pre>
 </li>
 <li>Open a file by clicking on the folder icon and create a task like this<pre><code>[Use imdone to manage tasks in my project](#doing:0)</code></pre>
+</li>
+<li>Or create tasks like this in code files (java example)<pre><code>// TODO: Use HashMap instead of HashTable</code></pre>
 </li>
 <li>Add another project by navigating to the project directory in the terminal and run...<pre><code>imdone</code></pre>
 </li>
@@ -210,6 +214,40 @@ module.exports = {
 <ul>
 <li>I use iMDone every day on Ubuntu 13.04 and the latest version of chrome.  It should work on any machine that has nodejs and npm installed and for auto update of boards, a browser that supports websockets.</li>
 <li>I us <a href="http://pivotal.github.io/jasmine/">jasmine</a> and <a href="https://github.com/mhevery/jasmine-node">mhevery/jasmine-node</a> for testing.</li>
+</ul>
+<h2>Change Log</h2>
+<h3>1.0</h3>
+<ul>
+<li>Fix refresh on file rename, create, or delete</li>
+<li>Add support for code style tasks</li>
+<li>Fix browser open for imdone running on another port</li>
+</ul>
+<h3>0.6.6</h3>
+<ul>
+<li>Hide archive and filter buttons when swithing projects</li>
+</ul>
+<h3>0.6.5</h3>
+<ul>
+<li>Add archiving of tasks to existing archive or deleted list or create archive list</li>
+<li>Add filter by selected tasks filenames</li>
+<li>Allow regex in filter</li>
+</ul>
+<h3>0.6.4</h3>
+<ul>
+<li>Add batch move tasks</li>
+</ul>
+<h3>0.5.6</h3>
+<ul>
+<li>Add copy button to preview</li>
+</ul>
+<h3>0.5.2</h3>
+<ul>
+<li>Fix valid task check for filetypes without a symbol</li>
+</ul>
+<h3>0.5.1</h3>
+<ul>
+<li>Fix file save if modified and clicking on a search result</li>
+<li>Fix file route interpretation of preview boolean</li>
 </ul>
 
   <!--/README -->
