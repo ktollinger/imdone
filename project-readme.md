@@ -13,8 +13,7 @@ I'll be releasing an iMDone service that connects directly to your github projec
 Introduction
 ----
 When working on a software project in code or writing project in markdown, there are always tasks you need to record.
-Most people use a separate tool to record tasks and sort them into lists.
-That's where iMDone comes in.  Tasks are just markdown links!
+Most people use a separate tool to record tasks and keep track of their progress.  iMDone let's you do it right in your work.
 
 [![Build Status](https://travis-ci.org/piascikj/imdone.png?branch=master)](https://travis-ci.org/piascikj/imdone)
 [![Dependency Status](https://gemnasium.com/piascikj/imdone.png)](https://gemnasium.com/piascikj/imdone)
@@ -222,7 +221,10 @@ Testing
 
 Change Log
 ----
-### 1.0
+### 1.0.1
+- Fix firefox dropdown display bug
+
+### 1.0.0
 - Fix refresh on file rename, create, or delete
 - Add support for code style tasks
 - Fix browser open for imdone running on another port
