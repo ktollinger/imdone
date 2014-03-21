@@ -30,8 +30,8 @@ Features
 - Select and move multiple tasks at once
 - Reorder lists
 - Hide and show lists
-- Task filters
-- Search
+- Task filters (Regular Expression syntax) 
+- Search (Regular Expression syntax)
 - Create, delete and edit files
 - Markdown preview with table of contents
 - Syntax highlighting in markdown code blocks 
@@ -221,6 +221,9 @@ Testing
 
 Change Log
 ----
+### 1.0.2
+- Fix bug for rename list when code style comments don't have a sort order
+
 ### 1.0.1
 - Fix firefox dropdown display bug
 
