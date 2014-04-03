@@ -36,10 +36,21 @@
           </div>
           <div class="col-md-9" role="main">
             <div>
+             
+              <div id="social">
+                <!-- [Put social links here from [mrmartineau/Javascript-less-Social-Links](https://github.com/mrmartineau/Javascript-less-Social-Links)](#doing:0) -->
+              
+                <a href="https://twitter.com/imdone_app" class="twitter-follow-button" data-show-count="false">Follow imdone_app</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+                <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://piascikj.github.io/imdone/" data-text="Check out iMDone!  A task board in your code" data-via="imdone_app" data-related="imdone_app" data-dnt="true">Tweet</a>
+                <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');</script>
+              
+              </div>
+            
               <div id="readme" class="readme language-javascript">
   <!-- README -->
                 <h2><img src="https://raw.githubusercontent.com/piascikj/imdone/master/docs/logo.png" alt="iMDone">  </h2>
-<h3>A task board in your code!</h3>
+<h3>A task board and wiki in one!</h3>
 <hr>
 <h2>Connect directly to github!</h2>
 <p><img src="https://raw.githubusercontent.com/piascikj/imdone/master/docs/images/imdone-ui.png" alt="iMDone UI"><br>I&#39;ll be releasing an iMDone service that connects directly to your github project.  Sign up for the newsletter <a href="http://signup.imdoneapp.com">here</a>.</p>
@@ -53,9 +64,15 @@ Most people use a separate tool to record tasks and keep track of their progress
 <p><a href="https://nodei.co/npm/imdone/"><img src="https://nodei.co/npm/imdone.png" alt="NPM"></a></p>
 <h2>Features</h2>
 <ul>
-<li>Now supports code style comments like <code>// FIXME: this is really broken</code> in code files</li>
-<li>Create tasks in any text file using markdown link syntax like <code>[Finish the latest blog post](doing:0)</code></li>
-<li>Sort tasks and move them between lists using drag and drop</li>
+<li>Now supports code style comments like<ul>
+<li><code>// FIXME: this is really broken</code> in code files</li>
+</ul>
+</li>
+<li>Create tasks in any text file using markdown link syntax like<ul>
+<li><code>[Finish the latest blog post](doing:0)</code></li>
+</ul>
+</li>
+<li>Sort tasks and move them between lists with drag and drop</li>
 <li>Select and move multiple tasks at once</li>
 <li>Reorder lists</li>
 <li>Hide and show lists</li>
@@ -64,7 +81,10 @@ Most people use a separate tool to record tasks and keep track of their progress
 <li>Create, delete and edit files</li>
 <li>Markdown preview with table of contents</li>
 <li>Syntax highlighting in markdown code blocks </li>
-<li><a href="https://github.com/gollum/gollum/wiki#page-links">Use gollum link syntax</a> - Great for managing github wikis</li>
+<li><a href="https://github.com/gollum/gollum/wiki#page-links">Use gollum link syntax</a><ul>
+<li>Great for managing github wikis</li>
+</ul>
+</li>
 <li>Execute an event listener for modified files</li>
 </ul>
 <h2>Quickstart</h2>
@@ -215,6 +235,10 @@ module.exports = {
 <li>I us <a href="http://pivotal.github.io/jasmine/">jasmine</a> and <a href="https://github.com/mhevery/jasmine-node">mhevery/jasmine-node</a> for testing.</li>
 </ul>
 <h2>Change Log</h2>
+<h3>1.0.4</h3>
+<ul>
+<li>Add callback to start for embedding</li>
+</ul>
 <h3>1.0.2</h3>
 <ul>
 <li>Fix bug for rename list when code style comments don&#39;t have a sort order</li>

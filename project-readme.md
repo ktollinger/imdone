@@ -1,7 +1,7 @@
 ![iMDone](https://raw.githubusercontent.com/piascikj/imdone/master/docs/logo.png)  
 ----
 
-### A task board in your code!
+### A task board and wiki in one!
 
 ----
 
@@ -24,9 +24,11 @@ Most people use a separate tool to record tasks and keep track of their progress
 
 Features
 ----
-- Now supports code style comments like `// FIXME: this is really broken` in code files
-- Create tasks in any text file using markdown link syntax like `[Finish the latest blog post](doing:0)`
-- Sort tasks and move them between lists using drag and drop
+- Now supports code style comments like
+  - `// FIXME: this is really broken` in code files
+- Create tasks in any text file using markdown link syntax like
+  - `[Finish the latest blog post](doing:0)`
+- Sort tasks and move them between lists with drag and drop
 - Select and move multiple tasks at once
 - Reorder lists
 - Hide and show lists
@@ -35,7 +37,8 @@ Features
 - Create, delete and edit files
 - Markdown preview with table of contents
 - Syntax highlighting in markdown code blocks 
-- [Use gollum link syntax](https://github.com/gollum/gollum/wiki#page-links) - Great for managing github wikis
+- [Use gollum link syntax](https://github.com/gollum/gollum/wiki#page-links)
+  - Great for managing github wikis
 - Execute an event listener for modified files
 
 Quickstart
@@ -221,6 +224,9 @@ Testing
 
 Change Log
 ----
+### 1.0.4
+- Add callback to start for embedding
+
 ### 1.0.2
 - Fix bug for rename list when code style comments don't have a sort order
 

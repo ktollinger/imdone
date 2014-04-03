@@ -36,6 +36,14 @@ module.exports = function(grunt) {
             project: "piascikj/imdone",
             ga: 'UA-37731114-1',
             history: 'History.md',
+            social: {
+              twitter: {
+                referer:"http://piascikj.github.io/imdone/",
+                text: "Check out iMDone!  A task board in your code",
+                url:"http://piascikj.github.io/imdone/",
+                username: "imdone_app"
+              } 
+            }
           },
           markdownOptions: {
             gfm: true
