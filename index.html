@@ -52,6 +52,22 @@
                 <h2><img src="https://raw.githubusercontent.com/piascikj/imdone/master/docs/logo.png" alt="iMDone">  </h2>
 <h3>A task board and wiki in one!</h3>
 <hr>
+<h3>New in version 1.2.0</h3>
+<ul>
+<li>Now using the <a href="https://www.npmjs.org/package/imdone-core">imdone-core</a> library</li>
+<li>Tours to get you started</li>
+<li>Create lists without having to create a task</li>
+<li>Add and remove projects in the UI</li>
+<li>Keyboard help with <code>?</code> or on Help menu</li>
+<li>Create a new task from the current line with <code>&lt;Alt&gt;+t</code></li>
+<li>List names are in code completion list with <code>&lt;Ctrl&gt;+&lt;Space&gt;</code></li>
+<li>Reopen projects that were open on last close.  This is merged with --dirs or directory imdone was started in.  Can also be editied in <code>~/.imdone/config.json</code></li>
+<li>I had to do away with events to make the configuration JSON, but will consider bringing them back if there is enough demand.</li>
+</ul>
+<h3>Important</h3>
+<p>If you&#39;re migrating from an older version of iMDone the configuration is in a new place.  It&#39;s still in the .imdone 
+folder, but it&#39;s now in JSON format and lists are also stored there.
+Because it&#39;s in JSON format, you&#39;ll have to escape the &#39;\&#39; character in your excludes.</p>
 <h2>Connect directly to github!</h2>
 <p><img src="https://raw.githubusercontent.com/piascikj/imdone/master/docs/images/imdone-ui.png" alt="iMDone UI"><br>I&#39;ll be releasing an iMDone service that connects directly to your github project.  Sign up for the newsletter <a href="http://signup.imdoneapp.com">here</a>.</p>
 <h2>Introduction</h2>
@@ -64,8 +80,8 @@ Most people use a separate tool to record tasks and keep track of their progress
 <p><a href="https://nodei.co/npm/imdone/"><img src="https://nodei.co/npm/imdone.png" alt="NPM"></a></p>
 <h2>Features</h2>
 <ul>
-<li>Now supports code style comments like<ul>
-<li><code>// FIXME: this is really broken</code> in code files</li>
+<li>Supports code style comments like this in code files<ul>
+<li><code>// FIXME: this is really broken</code></li>
 </ul>
 </li>
 <li>Create tasks in any text file using markdown link syntax like<ul>
@@ -79,6 +95,7 @@ Most people use a separate tool to record tasks and keep track of their progress
 <li>Task filters (Regular Expression syntax) </li>
 <li>Search (Regular Expression syntax)</li>
 <li>Create, delete and edit files</li>
+<li>Code completion with ctrl+space in editor</li>
 <li>Markdown preview with table of contents</li>
 <li>Syntax highlighting in markdown code blocks </li>
 <li><a href="https://github.com/gollum/gollum/wiki#page-links">Use gollum link syntax</a><ul>
@@ -97,28 +114,29 @@ Most people use a separate tool to record tasks and keep track of their progress
 </li>
 <li>Open a file by clicking on the folder icon and create a task like this<pre><code>[Use imdone to manage tasks in my project](#doing:0)</code></pre>
 </li>
-<li>Or create tasks like this in code files (java example)<pre><code>// TODO: Use HashMap instead of HashTable</code></pre>
+<li>Or create tasks like this in code files (javascript example)<pre><code>// TODO: Use HashMap instead of HashTable</code></pre>
 </li>
 <li>Add another project by navigating to the project directory in the terminal and run...<pre><code>imdone</code></pre>
 </li>
 </ul>
 <h2>Configuration</h2>
-<p>After running imdone for the first time, modify imdone/imdone.js in your project directory.  The default config looks like this.  Your imdone.js will extend this.</p>
-<pre><code class="lang-javascript">module.exports = {
-  include:/^.*$/,
-  exclude:/^(node_modules|bower_components|imdone|target|build)\/|\.(git|svn|imdone)|\~$|\.(jpg|png|gif|swp|ttf|otf)$/,
-  marked : {
-    gfm: true,
-    pedantic: false,
-    sanitize: true
-  },
-  events : {
-    modified: function(params) {
-      console.log(&quot;Files modified in project:&quot;, params.project.path);
-      console.log(params.files);
-    }
+<p>After running imdone for the first time, modify .imdone/imdone.json in your project directory.  The default config looks like this.  Your imdone.json will extend this.</p>
+<pre><code class="lang-javascript">{
+  &quot;exclude&quot;: [
+    &quot;^(node_modules|bower_components|\\.imdone|target|build)\\/?|\\.(git|svn)|\\~$|\\.(jpg|png|gif|swp|ttf|otf)$&quot;
+  ],
+  &quot;watcher&quot;: true,
+  &quot;lists&quot;: [],
+  &quot;marked&quot;: {
+    &quot;gfm&quot;: true,
+    &quot;tables&quot;: true,
+    &quot;breaks&quot;: false,
+    &quot;pedantic&quot;: false,
+    &quot;sanitize&quot;: true,
+    &quot;smartLists&quot;: true,
+    &quot;langPrefix&quot;: &quot;language-&quot;
   }
-};</code></pre>
+}</code></pre>
 <h2>How you can help</h2>
 <p>If you like iMDone and want to help me make it better, you can make a contribution at Gittip.  Every donation is very much appreciated.  </p>
 <p><a href="https://www.gittip.com/piascikj/"><img src="https://rawgithub.com/twolfson/gittip-badge/0.1.0/dist/gittip.png" alt="Support via Gittip"></a></p>
@@ -156,73 +174,6 @@ Most people use a separate tool to record tasks and keep track of their progress
 <li>If the github clone url is <a href="https://github.com/piascikj/imdone.git">https://github.com/piascikj/imdone.git</a> then<pre><code>git clone https://github.com/piascikj/imdone.wiki.git</code></pre>
 </li>
 </ul>
-<h3>Configuration for running git add and commit after files are modified</h3>
-<pre><code class="lang-javascript">var exec = require(&#39;child_process&#39;).exec;
-var util = require(&#39;util&#39;);
-
-/*
- * imdone
- * https://github.com/piascikj/imdone
- *
- * Copyright (c) 2012 Jesse Piascik
- * Licensed under the MIT license.
- */
-module.exports = {
-  include:/^.*$/,
-  exclude:/^(node_modules|bower_components|imdone|target|build)\/|\.(git|svn|imdone)|\~$|\.(jpg|png|gif|swp|ttf|otf)$/,
-  marked : {
-    gfm: true,
-    pedantic: false,
-    sanitize: true
-  },
-  events : {
-    modified: function(params) {
-      console.log(&quot;Files modified in project:&quot;, params.project.path);
-      var statusCmd = &quot;git status -s&quot;;
-      var addCmd = &quot;git add -A&quot;;
-      var commitCmd = &#39;git commit -a -m &quot;Update to notes from imdone&quot;&#39;;
-      var opts = { cwd: params.project.path };
-      console.log(&quot;---Running &quot;, statusCmd);
-      exec(statusCmd, opts, function(err, stdout, stderr) {
-        if (err || stderr) {
-          console.log(&quot;Error executing &quot;, statusCmd);
-          console.log(&quot;err:&quot;, err);
-          console.log(&quot;stderr:&quot;, stderr);
-          return;
-        }
-
-        if (/^\s*(\?|M|A|D|R|C|U)/g.test(stdout)) {
-          console.log(&quot;Found changes to commit!&quot;);
-          console.log(stdout);
-          console.log(&quot;---Running &quot;, addCmd);
-          exec(addCmd, opts, function(err, stdout, stderr) {
-            if (err || stderr) {
-              console.log(&quot;Error executing &quot;, addCmd);
-              console.log(&quot;err:&quot;, err);
-              console.log(&quot;stderr:&quot;, stderr);
-              return;
-            }
-            console.log(&quot;stdout:&quot;, stdout);
-
-            console.log(&quot;---Running &quot;, commitCmd);
-            exec(commitCmd, opts, function(err, stdout, stderr) {
-              if (err || stderr) {
-                console.log(&quot;Error executing &quot;, commitCmd);
-                console.log(&quot;err:&quot;, err);
-                console.log(&quot;stderr:&quot;, stderr);
-                return;
-              }
-              console.log(&quot;stdout:&quot;, stdout);
-            });
-          });
-        } else {
-          console.log(&quot;No changes detected.&quot;);
-        }
-      });
-
-    }
-  }
-};</code></pre>
 <h2>Common Errors</h2>
 <ul>
 <li>If you are using bower in your project be sure to exclude the directory defined in your .bowerrc file (usually bower_components), otherwise you&#39;ll end up with too many open files errors.</li>
@@ -235,6 +186,26 @@ module.exports = {
 <li>I us <a href="http://pivotal.github.io/jasmine/">jasmine</a> and <a href="https://github.com/mhevery/jasmine-node">mhevery/jasmine-node</a> for testing.</li>
 </ul>
 <h2>Change Log</h2>
+<h3>1.2.0</h3>
+<ul>
+<li>Now using the <a href="https://www.npmjs.org/package/imdone-core">imdone-core</a> library</li>
+<li>Tours to get you started</li>
+<li>Create lists without having to create a task</li>
+<li>Add and remove projects in the UI</li>
+<li>Keyboard help with <code>?</code> or on Help menu</li>
+<li>Create a new task from the current line with <code>&lt;Alt&gt;+t</code></li>
+<li>List names are in code completion list with <code>&lt;Ctrl&gt;+&lt;Space&gt;</code></li>
+<li>Reopen projects that were open on last close.  This is merged with --dirs or directory imdone was started in.  Can also be editied in <code>~/.imdone/config.json</code></li>
+<li>I had to do away with events to make the configuration JSON, but will consider bringing them back if there is enough demand.</li>
+</ul>
+<h3>1.1.3</h3>
+<ul>
+<li>Add delay to sortable elements</li>
+</ul>
+<h3>1.1.1</h3>
+<ul>
+<li>Fix line number of match</li>
+</ul>
 <h3>1.0.7</h3>
 <ul>
 <li>Update events for better push updates</li>
