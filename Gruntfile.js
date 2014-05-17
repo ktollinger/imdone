@@ -41,7 +41,7 @@ module.exports = function(grunt) {
                 referer:"http://piascikj.github.io/imdone/",
                 text: "Check out iMDone!  A task board in your code",
                 url:"http://piascikj.github.io/imdone/",
-                username: "imdone_app"
+                username: "imdone_io"
               } 
             }
           },

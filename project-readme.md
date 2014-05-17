@@ -12,7 +12,7 @@
 
 ----
 ### iMDone has pluggins!
-CHeck out [imdone-echo-plugin](https://www.npmjs.org/package/imdone-echo-plugin)
+Check out [imdone-echo-plugin](https://www.npmjs.org/package/imdone-echo-plugin)
 
 ### New in version 1.2.0
 - Now using the [imdone-core](https://www.npmjs.org/package/imdone-core) library
@@ -174,6 +174,11 @@ Testing
 
 Change Log
 ----
+### 1.2.9
+- Fix new list found
+- `<Ctrl>+k` for new task
+- Allow `#list:0` task syntax
+
 ### 1.2.3
 - New task is now `<Ctrl>+n`. A little easier for the fingers:)
 - Only select tasks that are visible on select all
