@@ -57,26 +57,9 @@
 <a href="http://flattr.com/thing/1286067/iMDone" title="Donate monthly to this project using Flattr"><img src="http://img.shields.io/flattr/donate.png?color=yellow" alt="Flattr donate button"></a></p>
 <p><a href="https://nodei.co/npm/imdone/"><img src="https://nodei.co/npm/imdone.png" alt="NPM"></a></p>
 <hr>
-<h3>iMDone has pluggins!</h3>
-<p>Check out <a href="https://www.npmjs.org/package/imdone-echo-plugin">imdone-echo-plugin</a></p>
-<h3>New in version 1.2.0</h3>
-<ul>
-<li>Now using the <a href="https://www.npmjs.org/package/imdone-core">imdone-core</a> library</li>
-<li>Tours to get you started</li>
-<li>Create lists without having to create a task</li>
-<li>Add and remove projects in the UI</li>
-<li>Keyboard help with <code>?</code> or on Help menu</li>
-<li>Create a new task from the current line with <code>&lt;Ctrl&gt;+k</code></li>
-<li>List names are in code completion list with <code>&lt;Ctrl&gt;+&lt;Space&gt;</code></li>
-<li>Reopen projects that were open on last close.  This is merged with --dirs or directory imdone was started in.  Can also be editied in <code>~/.imdone/config.json</code></li>
-<li>I had to do away with events to make the configuration JSON, but will consider bringing them back if there is enough demand.</li>
-</ul>
-<h3>Important</h3>
-<p>If you&#39;re migrating from an older version of iMDone the configuration is in a new place.  It&#39;s still in the .imdone 
-folder, but it&#39;s now in JSON format and lists are also stored there.
-Because it&#39;s in JSON format, you&#39;ll have to escape the &#39;\&#39; character in your excludes.</p>
-<h2>Connect directly to github!</h2>
-<p><img src="https://raw.githubusercontent.com/piascikj/imdone/master/docs/images/imdone-ui.png" alt="iMDone UI"><br>I&#39;ll be releasing an iMDone service that connects directly to your github project.  Sign up for the newsletter <a href="http://signup.imdoneapp.com">here</a>.</p>
+<h2>iMDone stand alone</h2>
+<p>iMDone is now available as a stand alone app at <a href="http://imdone.io">imdone.io</a>.
+If you&#39;re willing to give me good feedback and spread the word I&#39;ll issue you a free download code.<br>Just <a href="http://twitter.com/home?status=Give%20me%20imdone%20for%20free%20@imdone_io">tweet</a> to let me know. </p>
 <h2>Introduction</h2>
 <p>When working on a software project in code or writing project in markdown, there are always tasks you need to record.
 Most people use a separate tool to record tasks and keep track of their progress.  iMDone let&#39;s you do it right in your work.</p>
@@ -87,7 +70,8 @@ Most people use a separate tool to record tasks and keep track of their progress
 </ul>
 </li>
 <li>Create tasks in any text file using markdown link syntax like<ul>
-<li><code>[Finish the latest blog post](doing:0)</code></li>
+<li><code>[Finish the latest blog post](#doing:0)</code></li>
+<li>or with a hashtag <code>#doing:0 Finish the latest blog post</code></li>
 </ul>
 </li>
 <li>Sort tasks and move them between lists with drag and drop</li>
@@ -114,7 +98,9 @@ Most people use a separate tool to record tasks and keep track of their progress
 </li>
 <li>or for help...<pre><code>imdone -h</code></pre>
 </li>
-<li>Open a file by clicking on the folder icon and create a task like this<pre><code>[Use imdone to manage tasks in my project](#doing:0)</code></pre>
+<li>Open a file by clicking on the folder icon and create a task like this<pre><code>[Use imdone to manage tasks in my project](#done:0)</code></pre>
+</li>
+<li>Or like this<pre><code>When your in the middle of a scentence #todo:0 write a task like this.</code></pre>
 </li>
 <li>Or create tasks like this in code files (javascript example)<pre><code>// TODO: Use HashMap instead of HashTable</code></pre>
 </li>
@@ -139,6 +125,9 @@ Most people use a separate tool to record tasks and keep track of their progress
     &quot;langPrefix&quot;: &quot;language-&quot;
   }
 }</code></pre>
+<h2>Plugins</h2>
+<p>More to come on this, but here&#39;s a sample.
+Check out <a href="https://www.npmjs.org/package/imdone-echo-plugin">imdone-echo-plugin</a></p>
 <h2>How you can help</h2>
 <p>If you like iMDone and want to help me make it better, you can make a contribution at Gittip.  Every donation is very much appreciated.  </p>
 <p><a href="https://www.gittip.com/piascikj/"><img src="https://rawgithub.com/twolfson/gittip-badge/0.1.0/dist/gittip.png" alt="Support via Gittip"></a></p>
@@ -182,6 +171,10 @@ Most people use a separate tool to record tasks and keep track of their progress
 </ul>
 <h2>See it in action!</h2>
 <p>Fork this repository and run imdone in your local copy.  I use imdone for keeping track of imdone development.</p>
+<h2>Migrating from older versions</h2>
+<p>If you&#39;re migrating from an older version of iMDone the configuration is in a new place.  It&#39;s still in the .imdone 
+folder, but it&#39;s now in JSON format and lists are also stored there.
+Because it&#39;s in JSON format, you&#39;ll have to escape the &#39;\&#39; character in your excludes.</p>
 <h2>Testing</h2>
 <ul>
 <li>I use iMDone every day on Ubuntu 13.04 and the latest version of chrome.  It should work on any machine that has nodejs and npm installed and for auto update of boards, a browser that supports websockets.</li>
