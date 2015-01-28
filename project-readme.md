@@ -1,13 +1,13 @@
 ![iMDone](https://raw.githubusercontent.com/piascikj/imdone/master/docs/logo.png)  
 ----
 
-A task board and wiki in one!
+Put TODOs in their place!
 ----
-
-[![Build Status](https://travis-ci.org/piascikj/imdone.png?branch=master)](https://travis-ci.org/piascikj/imdone)
-[![Dependency Status](https://gemnasium.com/piascikj/imdone.png)](https://gemnasium.com/piascikj/imdone)
-[![Gittip donate button](http://img.shields.io/gittip/piascikj.png)](https://www.gittip.com/piascikj/ "Donate weekly to this project using Gittip")
-[![Flattr donate button](http://img.shields.io/flattr/donate.png?color=yellow)](http://flattr.com/thing/1286067/iMDone "Donate monthly to this project using Flattr")
+[![Downloads](http://img.shields.io/npm/dm/imdone.svg?style=flat)](https://nodei.co/npm/imdone/)
+[![Build Status](http://img.shields.io/travis/piascikj/imdone.svg?style=flat)](https://travis-ci.org/piascikj/imdone)
+[![Dependency Status](http://img.shields.io/david/piascikj/imdone.svg?style=flat)](https://david-dm.org/piascikj/imdone)
+[![Gratipay donate button](http://img.shields.io/gratipay/piascikj.svg?style=flat)](https://www.gratipay.com/piascikj/ "Donate weekly to this project using Gratipay")
+[![Flattr donate button](http://img.shields.io/badge/flattr-donate-yellow.svg?style=flat)](http://flattr.com/thing/1286067/iMDone "Donate monthly to this project using Flattr")
 
 [![NPM](https://nodei.co/npm/imdone.png)](https://nodei.co/npm/imdone/)
 
@@ -15,14 +15,15 @@ A task board and wiki in one!
 
 Stay in the loop
 ----
-[![Follow imdone_io on Twitter](http://i.imgur.com/wWzX9uB.png) Follow @imdone_io](https://twitter.com/intent/user?screen_name=imdone_io)  
-[![iMDone Blog](http://i.imgur.com/jDRp47c.png)Read the iMDone Blog](http://blog.imdone.io)  
+[![Follow imdone_io on Twitter](http://img.shields.io/badge/twitter-imdone__io-blue.svg?style=flat)](https://twitter.com/intent/user?screen_name=imdone_io)
+[![iMDone Blog](http://img.shields.io/badge/blog-read-blue.svg?style=flat)](http://blog.imdone.io)  
 
-iMDone stand alone
+iMDone for Chrome
 ----
-iMDone is now available as a stand alone app at [imdone.io](http://imdone.io).
-If you're willing to give me honest feedback I'll issue you a free download code.  
-Just [tweet](http://twitter.com/home?status=Give%20me%20imdone%20for%20free%20@imdone_io) to let me know. 
+iMDone is now available as a chrome app at [iMDone - Chrome Web Store](https://chrome.google.com/webstore/detail/imdone/kchfkmdhgpibgidhdllkbgfnpmefdldl) with a 2 week free trial.
+
+This project is going on hold so I can foucs more of my time on the chrome app.  I'll be adding all of the npm project features to the new chrome app over time, so stay tunned.  If you like iMDone give the chrome app a try!
+
 
 Introduction
 ----
@@ -83,7 +84,7 @@ imdone
 
 Configuration
 ----
-After running imdone for the first time, modify .imdone/imdone.json in your project directory.  The default config looks like this.  Your imdone.json will extend this.
+After running imdone for the first time, modify `.imdone/config.json` in your project directory.  The default config looks like this.  Your `.imdone/config.json` will extend this:
 ```javascript
 {
   "exclude": [
@@ -179,6 +180,19 @@ Testing
 
 Change Log
 ----
+### 1.4.5
+- Better task detection in code
+
+### 1.4.4
+- Fix code block replace in md files
+
+### 1.4.3
+- Added config.code.include_lists array for code tasks
+
+### 1.4.2
+- Recognize code style tasks in block comments.  
+- #DOING: Needs more community input on languages.js
+
 ### 1.3.8
 - Notify user of file change on disk
 
